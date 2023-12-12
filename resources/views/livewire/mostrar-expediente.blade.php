@@ -46,12 +46,6 @@
 			<p><strong>TOTAL:</strong> ${{ $totalHonorarios }}</p>
 		</div>
 
-		@foreach (File::files(public_path('/archivos')) as $file)
-			@if(pathinfo($file, PATHINFO_EXTENSION) == 'pdf')
-				<a href="{{ asset('/archivos/' . basename($file)) }}" target="_blank">{{ basename($file) }}</a><br>
-			@endif
-		@endforeach
-
 		@cannot('create', App\Models\Expediente::class)
 		<form class="flex" wire:submit.prevent="asignarNumeroExpediente">
 			<div class="mr-2">
