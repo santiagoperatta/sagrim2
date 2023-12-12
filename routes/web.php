@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\ArchivoController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\ProfileController;
@@ -33,6 +34,7 @@ Route::get('/expedientes/create', [ExpedienteController::class, 'create'] )->mid
 Route::get('/informacion/create/{expedienteId}', [InfoPersonalController::class, 'create'] )->middleware(['auth', 'verified'])->name('info-personal.create');
 Route::get('/infotrabajo/create/{expedienteId}', [InfoTrabajoController::class, 'create'] )->middleware(['auth', 'verified'])->name('info-trabajo.create');
 Route::get('/honorarios/create/{expedienteId}', [HonorarioController::class, 'create'] )->middleware(['auth', 'verified'])->name('honorario.create');
-Route::get('/expedientes/{expediente}', [ExpedienteController::class, 'show'])->middleware(['auth'])->name('expedientes.show');
+Route::get('/expedientes/{id}', [ExpedienteController::class, 'show'])->name('expedientes.show');
 
+Route::get('/subida-archivos', [ArchivoController::class, 'create'])->middleware(['auth'])->name('archivos.create');
 require __DIR__.'/auth.php';

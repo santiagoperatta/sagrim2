@@ -13,8 +13,7 @@
 		</div>
 		
 		<div class="mb-2">
-			<x-input-label  for="expediente_id" :value="__('ID Expediente')" />
-			<x-text-input id="expediente_id" class="block w-full" type="text" wire:model="expediente_id" placeholder="ID del Expediente" :value="old('expediente_id')"/>
+			<x-text-input id="expediente_id" class="block w-full" type="hidden" wire:model="expediente_id" placeholder="ID del Expediente" :value="$expediente_id" />
 			<x-input-error :messages="$errors->get('expediente_id')"/>
 		</div>
 

@@ -18,12 +18,11 @@ class InfoPersonalController extends Controller
     /**
      * Show the form for creating a new resource.
      */
-    public function create()
+    public function create($expediente_id)
     {
-		$expedienteId = session('expedienteId');
-
-		return view('info-personal.create', ['expedienteId' => $expedienteId]);
+		return view('info-personal.create', ['expediente_id' => $expediente_id]);
     }
+
 
     /**
      * Store a newly created resource in storage.

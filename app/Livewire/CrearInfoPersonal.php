@@ -4,6 +4,7 @@ namespace App\Livewire;
 
 use Livewire\Component;
 use App\Models\InfoPersonal;
+use Illuminate\Http\Request;
 
 class CrearInfoPersonal extends Component
 {
@@ -22,6 +23,13 @@ class CrearInfoPersonal extends Component
 		'razon_social' => 'required',
 		'expediente_id' => 'required'
 	];
+
+	public function getIdTask(Request $request, $id)
+	{ 
+		$expedienteId = session('expedienteId');
+
+		return view('info-personal.create', ['expedienteId' => $expedienteId]);
+	}
 	
 	public function crearInfoPersonal(){
 		$datos = $this->validate();

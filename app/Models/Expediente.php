@@ -2,6 +2,8 @@
 
 namespace App\Models;
 
+use App\Models\Honorario;
+use App\Models\InfoTrabajo;
 use App\Models\InfoPersonal;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Factories\HasFactory;

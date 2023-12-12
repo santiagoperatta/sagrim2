@@ -33,16 +33,17 @@ class ExpedienteController extends Controller
         //
     }
 
+	public function getIdTask(Request $request, $id)
+	{
+		return view('expedientes.create', ['expediente_id' => $id]);
+	}
+
     /**
      * Display the specified resource.
      */
-	public function show(Expediente $expediente)
+	public function show($id)
 	{
-		$expediente->load('infoPersonal');
-	
-		return view('expedientes.show', [
-			'expediente' => $expediente,
-		]);
+		return view('expedientes.show', ['expediente_id' => $id]);
 	}
     /**
      * Show the form for editing the specified resource.
@@ -59,10 +60,20 @@ class ExpedienteController extends Controller
     /**
      * Update the specified resource in storage.
      */
-    public function update(Request $request, string $id)
-    {
-        //
-    }
+	public function update(Request $request, $id)
+	{
+		$expediente = Expediente::findOrFail($id);
+	
+		$request->validate([
+			'numero_expediente' => 'nullable|numeric',
+		]);
+	
+		$expediente->update([
+			'nro_expediente' => $request->input('numero_expediente'),
+		]);
+	
+		return redirect()->route('expedientes.show', $id)->with('success', 'Número de expediente añadido correctamente.');
+	}
 
     /**
      * Remove the specified resource from storage.

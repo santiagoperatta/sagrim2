@@ -9,9 +9,11 @@ class CrearExpediente extends Component
 {
     public $estado;
     public $expedienteId;
+	public $nro_expediente;
 
     protected $rules = [
         'estado' => 'nullable|boolean',
+		'nro_expediente' => 'nullable|numeric'
     ];
 
     public function crearExpediente()
@@ -21,6 +23,7 @@ class CrearExpediente extends Component
         $expediente = Expediente::create([
             'estado' => $datos['estado'] ?? false,
             'user_id' => auth()->user()->id,
+			'nro_expediente' => $datos['nro_expediente'] ?? false,
         ]);
 
 		$this->expedienteId = $expediente->id;

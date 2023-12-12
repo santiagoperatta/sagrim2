@@ -18,13 +18,17 @@ class HonorarioController extends Controller
     /**
      * Show the form for creating a new resource.
      */
-    public function create()
+    public function create($expediente_id)
     {
 		$expedienteId = session('expedienteId');
 
-		return view('honorario.create', ['expedienteId' => $expedienteId]);
+		return view('honorario.create', ['expediente_id' => $expediente_id]);
     }
 
+	public function getIdTask(Request $request, $id)
+	{
+		return view('honorario.create',['expediente_id' => $id]);
+	}
     /**
      * Store a newly created resource in storage.
      */

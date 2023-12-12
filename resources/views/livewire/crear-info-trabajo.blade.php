@@ -21,7 +21,8 @@
 		<div class="mb-2">
             <x-input-label for="tipo_parcela" :value="__('Tipo de Parcela')" />
             <select id="tipo_parcela" class="block w-full border-gray-300 focus:border-green-600 focus:ring focus:ring-green-200 focus:ring-opacity-50 rounded-md shadow-sm" wire:model="tipo_parcela">
-                <option value="Rural">Rural</option>
+				<option value="Rural">--Seleccione una opcion--</option>
+				<option value="Rural">Rural</option>
                 <option value="Urbana">Urbana</option>
             </select>
             <x-input-error :messages="$errors->get('tipo_parcela')"/>
@@ -34,8 +35,7 @@
 		</div>
 	
 		<div class="mb-2">
-			<x-input-label  for="expediente_id" :value="__('ID Expediente')" />
-			<x-text-input id="expediente_id" class="block w-full" type="text" wire:model="expediente_id" placeholder="ID del Expediente" :value="old('expediente_id')"/>
+			<x-text-input id="expediente_id" class="block w-full" type="hidden" wire:model="expediente_id" placeholder="ID del Expediente" :value="$expediente_id" />
 			<x-input-error :messages="$errors->get('expediente_id')"/>
 		</div>
 	

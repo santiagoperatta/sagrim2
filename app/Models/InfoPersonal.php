@@ -3,6 +3,7 @@
 namespace App\Models;
 
 // use Illuminate\Contracts\Auth\MustVerifyEmail;
+use App\Models\User;
 use App\Models\Expediente;
 use Laravel\Sanctum\HasApiTokens;
 use Illuminate\Notifications\Notifiable;
@@ -30,5 +31,10 @@ class InfoPersonal extends Authenticatable
     {
         return $this->belongsTo(Expediente::class);
     }
+
+	public function user()
+	{
+		return $this->belongsTo(User::class, 'expediente_id', 'expediente_id');
+	}
 
 }
