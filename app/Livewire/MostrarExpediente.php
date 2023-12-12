@@ -18,8 +18,6 @@ class MostrarExpediente extends Component
 
     public function render()
     {
-        $archivos = scandir(public_path('storage/archivos'));
-
         return view('livewire.mostrar-expediente', compact('archivos'));
     }
 
