@@ -18,7 +18,9 @@ class MostrarExpediente extends Component
 
     public function render()
     {
-        return view('livewire.mostrar-expediente', compact('archivos'));
+        $archivos = scandir(public_path('/archivos'));
+
+        return view('livewire.mostrar-expediente');
     }
 
 	public function asignarNumeroExpediente()
