@@ -1,4 +1,10 @@
 <div class="md:justify-center p-5">
+	<div class="flex justify-between">
+		<div class="{{ $pasoActual === 1 ? 'bg-green-500' : 'bg-gray-300' }} w-4 h-4 rounded-full"></div>
+		<div class="{{ $pasoActual === 2 ? 'bg-green-500' : 'bg-gray-300' }} w-4 h-4 rounded-full"></div>
+		<div class="{{ $pasoActual === 3 ? 'bg-green-500' : 'bg-gray-300' }} w-4 h-4 rounded-full"></div>
+		<div class="{{ $pasoActual === 4 ? 'bg-green-500' : 'bg-gray-300' }} w-4 h-4 rounded-full"></div>
+	</div>
 	<form class="md:w-2/3 space-y-5" wire:submit.prevent='crearInfoTrabajo'>
 		<div class="mb-2">
 			<x-input-label for="nomenclatura" :value="__('Nomenclatura')" />

@@ -16,6 +16,7 @@ class SubidaArchivos extends Component
     public $lamina1;
     public $lamina2;
     public $lamina3;
+	public $pasoActual=4;
 
     protected $rules = [
         'archivoCaja' => 'required|mimes:pdf',

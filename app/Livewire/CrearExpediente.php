@@ -10,6 +10,7 @@ class CrearExpediente extends Component
     public $estado;
     public $expedienteId;
 	public $nro_expediente;
+	
 
     protected $rules = [
         'estado' => 'nullable|boolean',
@@ -30,6 +31,7 @@ class CrearExpediente extends Component
 
 		return redirect()->route('info-personal.create', ['expedienteId' => $expediente->id]);
     }
+	
 
     public function render()
     {

@@ -13,7 +13,7 @@ return new class extends Migration
     {
         Schema::create('honorarios', function (Blueprint $table) {
             $table->id();
-            $table->foreignId('expediente_id')->constrained();
+            $table->foreignId('expediente_id')->constrained()->onDelete('cascade');;
             $table->string('articulo');
             $table->decimal('precio', 10, 2);
             $table->timestamps();

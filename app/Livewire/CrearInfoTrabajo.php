@@ -14,7 +14,7 @@ class CrearInfoTrabajo extends Component
 	public $tasa_colegio;
 	public $expedienteId;
     public $expediente_id;
-
+	public $pasoActual=2;
 
 	protected $rules = [
 		'nomenclatura' => 'required',

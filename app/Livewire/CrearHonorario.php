@@ -11,6 +11,7 @@ class CrearHonorario extends Component
     public $honorarios = [];
     public $articulo;
     public $precio;
+	public $pasoActual=3;
 
     public $aporteComitente = 0;
     public $totalAportes = 0;

@@ -14,7 +14,8 @@ class Expediente extends Model
 
 	protected $fillable = [
 		'estado',
-		'user_id'	
+		'user_id',
+		'nro_expediente'	
 	];
 
 	public function user()

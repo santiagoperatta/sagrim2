@@ -65,11 +65,11 @@ class ExpedienteController extends Controller
 		$expediente = Expediente::findOrFail($id);
 	
 		$request->validate([
-			'numero_expediente' => 'nullable|numeric',
+			'nro_expediente' => 'nullable|numeric',
 		]);
 	
 		$expediente->update([
-			'nro_expediente' => $request->input('numero_expediente'),
+			'nro_expediente' => $request->input('nro_expediente'),
 		]);
 	
 		return redirect()->route('expedientes.show', $id)->with('success', 'Número de expediente añadido correctamente.');

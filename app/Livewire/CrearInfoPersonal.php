@@ -15,6 +15,7 @@ class CrearInfoPersonal extends Component
 	public $expedienteId;
     public $expediente_id;
 
+	public $pasoActual = 1;
 
 	protected $rules = [
 		'nombre' => 'required',
