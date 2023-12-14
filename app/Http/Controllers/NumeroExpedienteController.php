@@ -58,17 +58,7 @@ class ArchivoController extends Controller
      */
     public function update(Request $request, $id)
     {
-		$expediente = Expediente::findOrFail($id);
-	
-		$request->validate([
-			'nro_expediente' => 'required|numeric',
-		]);
-	
-		$expediente->update([
-			'nro_expediente' => $request->input('nro_expediente'),
-		]);
-	
-		return redirect()->route('expedientes.show', ['expediente_id' => $id]);
+
     }
 
     /**

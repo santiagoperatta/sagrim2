@@ -2,18 +2,20 @@
 
 namespace App\Livewire;
 
-use App\Models\Expediente;
 use Livewire\Component;
+use App\Models\Expediente;
+use Livewire\Attributes\On;
 
 class MostrarExpedientes extends Component
 {
+	public Expediente $expediente;
 
-	protected $listeners=['eliminarExpediente'];
+	#[On('eliminarExpediente')]
+    public function eliminarExpediente( Expediente $id)
+    {
+		dd($id);
+    }
 
-	public function eliminarExpediente(Expediente $expediente){
-		$expediente->delete();
-	}
-	
     public function render()
     {
 		

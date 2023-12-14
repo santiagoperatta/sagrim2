@@ -22,7 +22,7 @@
 						</a>
 
 						<button
-									wire:click="$emit('mostrarAlerta', {{$expediente->id}})"
+									wire:click="$dispatch('mostrarAlerta', {id: {{$expediente->id}}})"
 									class="bg-red-600 py-2 px-4 rounded-lg text-white text-xs font-bold uppercase text-center"
 									>Eliminar
 						</button>
@@ -54,30 +54,36 @@
 </div>
 
 @push('scripts')
-<script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
-<script>
-	Livewire.on('mostrarAlerta', tareaId => {
-		Swal.fire({
-			title: 'Eliminar Tarea',
-			text: "Una tarea eliminada no puede recuperarse",
-			icon: 'warning',
-			showCancelButton: true,
-			confirmButtonColor: '#3085d6',
-			cancelButtonColor: '#d33',
-			confirmButtonText: 'Si, Eliminar',
-			cancelButtonText: "Cancelar"
-		}).then((result) => {
-			if (result.isConfirmed) {
-				//eliminar la carrera
-				Livewire.emit('elimnarTarea', tareaId)
-				
-				Swal.fire(
-					'Eliminada',
-					'Tu tarea ha sido eliminada.',
-					'succes'
-				)
-			}
-		})
-	})
-</script>
+ 
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+ 
+    <script>
+ 
+        document.addEventListener('livewire:initialized', () => {
+        @this.on('mostrarAlerta', expedienteId => {
+            Swal.fire({
+                title: '¿Eliminar este expediente?',
+                icon: 'warning',
+                showCancelButton: true,
+                confirmButtonColor: '#3085d6',
+                cancelButtonColor: '#d33',
+                confirmButtonText: 'Si, eliminar',
+                cancelButtonText: 'Cancelar'
+            }).then((result) => {
+            if (result.isConfirmed) {que 
+                @this.dispatch('eliminarExpediente', {id: expedienteId});
+ 
+                Swal.fire(
+                    'Eliminado!',
+                    'El expediente se ha eliminado correctamente',
+                    'success'
+                )
+            }
+            })
+        });
+    });
+ 
+ 
+ 
+    </script>
 @endpush

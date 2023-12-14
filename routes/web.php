@@ -1,13 +1,14 @@
 <?php
 
-use App\Http\Controllers\ArchivoController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\HomeController;
+use App\Http\Controllers\ArchivoController;
 use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\HonorarioController;
 use App\Http\Controllers\ExpedienteController;
 use App\Http\Controllers\InfoTrabajoController;
 use App\Http\Controllers\InfoPersonalController;
+use App\Http\Controllers\NotificacionController;
 
 /*
 |--------------------------------------------------------------------------
@@ -37,4 +38,6 @@ Route::get('/honorarios/create/{expedienteId}', [HonorarioController::class, 'cr
 Route::get('/expedientes/{id}', [ExpedienteController::class, 'show'])->name('expedientes.show');
 
 Route::get('/subida-archivos', [ArchivoController::class, 'create'])->middleware(['auth'])->name('archivos.create');
+//Notificaciones
+Route::get('/notificaciones', NotificacionController::class)->middleware(['auth', 'verified'])->name('notificaciones');
 require __DIR__.'/auth.php';

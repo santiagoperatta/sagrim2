@@ -1,11 +1,23 @@
-<div class="md:justify-center p-5">
-	<div class="flex justify-between">
-		<div class="{{ $pasoActual === 1 ? 'bg-green-500' : 'bg-gray-300' }} w-4 h-4 rounded-full"></div>
-		<div class="{{ $pasoActual === 2 ? 'bg-green-500' : 'bg-gray-300' }} w-4 h-4 rounded-full"></div>
-		<div class="{{ $pasoActual === 3 ? 'bg-green-500' : 'bg-gray-300' }} w-4 h-4 rounded-full"></div>
-		<div class="{{ $pasoActual === 4 ? 'bg-green-500' : 'bg-gray-300' }} w-4 h-4 rounded-full"></div>
-	</div>
-	<form class="md:w-2/3 space-y-5" wire:submit.prevent='crearInfoTrabajo'>
+<div class="md:justify-center items-center p-5">
+    <div class="flex items-center space-x-4">
+        <div class="{{ $pasoActual === 1 ? 'bg-gradient-to-r from-green-500 to-green-300' : 'bg-gray-300' }} w-10 h-10 rounded-full flex items-center justify-center border-2 border-white">
+            <span class="{{ $pasoActual === 1 ? 'text-white' : 'text-gray-500' }}">1</span>
+        </div>
+        <hr class="border-t border-green-300 mx-2 h-1" />
+        <div class="{{ $pasoActual === 2 ? 'bg-gradient-to-r from-green-500 to-green-300' : 'bg-gray-300' }} w-10 h-10 rounded-full flex items-center justify-center border-2 border-white">
+            <span class="{{ $pasoActual === 2 ? 'text-white' : 'text-gray-500' }}">2</span>
+        </div>
+        <hr class="border-t border-green-300 mx-2 h-1" />
+        <div class="{{ $pasoActual === 3 ? 'bg-gradient-to-r from-green-500 to-green-300' : 'bg-gray-300' }} w-10 h-10 rounded-full flex items-center justify-center border-2 border-white">
+            <span class="{{ $pasoActual === 3 ? 'text-white' : 'text-gray-500' }}">3</span>
+        </div>
+        <hr class="border-t border-green-300 mx-2 h-1" />
+        <div class="{{ $pasoActual === 4 ? 'bg-gradient-to-r from-green-500 to-green-300' : 'bg-gray-300' }} w-10 h-10 rounded-full flex items-center justify-center border-2 border-white">
+            <span class="{{ $pasoActual === 4 ? 'text-white' : 'text-gray-500' }}">4</span>
+        </div>
+    </div>
+
+	<form class="mt-4 md:w-2/3 space-y-5" wire:submit.prevent='crearInfoTrabajo'>
 		<div class="mb-2">
 			<x-input-label for="nomenclatura" :value="__('Nomenclatura')" />
 			<x-text-input id="nomenclatura" class="block w-full" type="text"  wire:model="nomenclatura"/>

@@ -4,6 +4,7 @@ namespace App\Livewire;
 
 use Livewire\Component;
 use App\Models\Expediente;
+use App\Notifications\ExpedienteVisado;
 
 class CrearNumeroExpediente extends Component
 {
@@ -18,11 +19,11 @@ class CrearNumeroExpediente extends Component
 
 	public function asignarNumeroExpediente()
 	{
-		// Asignar el número de expediente al modelo Expediente actual
+		$this->expediente->estado= 1;
 		$this->expediente->nro_expediente = $this->nro_expediente;
-		$this->expediente->save();
-	
+		$this->expediente->save();	
 		session()->flash('mensaje', 'Número de expediente asignado con éxito.');
+		$this->expediente->profesional->notify(new ExpedienteVisado($this->expediente->id, auth()->user()->id));
 	}
     public function render()
     {

@@ -4,7 +4,6 @@ namespace App\Policies;
 
 use App\Models\Expediente;
 use App\Models\User;
-use App\Models\Vacante;
 use Illuminate\Auth\Access\Response;
 
 class ExpedientePolicy
@@ -15,6 +14,12 @@ class ExpedientePolicy
     public function viewAny(User $user): bool
     {
         return $user->rol=== 2;
+    }
+
+
+	public function asignarNumeroExpediente(User $user): bool
+    {
+        return $user->rol=== 1;
     }
 
     /**

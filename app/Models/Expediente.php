@@ -42,5 +42,9 @@ class Expediente extends Model
     {
         return $this->hasMany(Honorario::class);
     }
-	
+
+	public function profesional()
+    {
+        return $this->belongsTo(User::class, 'user_id');
+    }
 }
