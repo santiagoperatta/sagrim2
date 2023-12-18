@@ -2,6 +2,7 @@
 
 namespace App\Models;
 
+use App\Models\User;
 use App\Models\Honorario;
 use App\Models\InfoTrabajo;
 use App\Models\InfoPersonal;

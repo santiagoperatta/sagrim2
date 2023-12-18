@@ -4,6 +4,7 @@ namespace App\Livewire;
 
 use Livewire\Component;
 use App\Models\Expediente;
+use Illuminate\Support\Facades\Storage;
 
 class MostrarExpediente extends Component
 {
@@ -23,7 +24,7 @@ class MostrarExpediente extends Component
 
 	public function render()
 	{
-		$archivos = scandir(public_path('/archivos'));
+        $archivos = Storage::files('public/archivos');
 	
 		return view('livewire.mostrar-expediente', compact('archivos'));
 	}

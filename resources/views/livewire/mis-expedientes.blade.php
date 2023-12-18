@@ -30,16 +30,24 @@
 				@endcannot
 
 				@can('create', App\Models\Expediente::class)
+				@if ($expediente->estado == 0)
 					<div class="p-4 flex gap-3 items-start">
-						<a href="" class="text-center bg-gray-700 py-2 px-4 rounded-lg text-white text-xs font-bold uppercase">
+						<a href="#" class="text-center bg-gray-700 py-2 px-4 rounded-lg text-white text-xs font-bold uppercase">
 							Continuar
 						</a>
-						
-						<a href="" class="text-center bg-green-700 py-2 px-4 rounded-lg text-white text-xs font-bold uppercase">
+						<a href="#" class="text-center bg-green-700 py-2 px-4 rounded-lg text-white text-xs font-bold uppercase">
 							Enviar
 						</a>
 					</div>
-				@endcan
+				@else
+					<div class="p-4 flex items-start">
+						<p class="text-green-700 uppercase font-bold">
+							<i class="fa-solid fa-file-circle-check" style="font-size: 24px;"></i>
+						</p>
+					</div>
+				@endif
+			@endcan
+			
 			</div>
 	
         @empty
@@ -52,7 +60,10 @@
 		
     </div>
 
-    <div class="flex justify-center mt-10">
+	
+	<livewire:crear-expediente/>
+
+    <div class="flex justify-center mb-10 mt-10">
         {{$expedientes->links()}}
     </div>
 </div>

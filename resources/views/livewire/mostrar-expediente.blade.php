@@ -54,10 +54,10 @@
 				$contadorArchivos = 1;
 				@endphp
 
-				@foreach (File::files(public_path('/archivos')) as $file)
+				@foreach (Storage::files('public/archivos') as $file)
 					@if(pathinfo($file, PATHINFO_EXTENSION) == 'pdf')
 						<a class="mt-2 inline-flex items-center shadow-sm px-2.5 py-0.5 border border-gray-300 text-sm
-						leading-5 font-medium rounded-full text-gray-700 bg-white hover-bg-gray-50" href="{{ asset('/archivos/' . basename($file)) }}" target="_blank">Ver Archivo {{ $contadorArchivos++ }}</a><br>
+						leading-5 font-medium rounded-full text-gray-700 bg-white hover-bg-gray-50" href="{{ asset('storage/archivos/' . basename($file)) }}" target="_blank">Ver Archivo {{ $contadorArchivos++ }}</a><br>
 					@endif
 				@endforeach
 			</div>

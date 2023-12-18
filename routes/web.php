@@ -9,6 +9,8 @@ use App\Http\Controllers\ExpedienteController;
 use App\Http\Controllers\InfoTrabajoController;
 use App\Http\Controllers\InfoPersonalController;
 use App\Http\Controllers\NotificacionController;
+use App\Http\Controllers\MisExpedientesController;
+use App\Http\Controllers\ExpedientesVisadosController;
 
 /*
 |--------------------------------------------------------------------------
@@ -22,7 +24,11 @@ use App\Http\Controllers\NotificacionController;
 */
 
 Route::get('/', function () {
-    return view('dashboard');
+    return view('mis-expedientes.show');
+})->middleware(['auth', 'verified'])->name('mis-expedientes.show');
+
+Route::get('/', function () {
+    return view('/dashboard');
 })->middleware(['auth', 'verified'])->name('dashboard');
 
 Route::middleware('auth')->group(function () {
@@ -36,6 +42,10 @@ Route::get('/informacion/create/{expedienteId}', [InfoPersonalController::class,
 Route::get('/infotrabajo/create/{expedienteId}', [InfoTrabajoController::class, 'create'] )->middleware(['auth', 'verified'])->name('info-trabajo.create');
 Route::get('/honorarios/create/{expedienteId}', [HonorarioController::class, 'create'] )->middleware(['auth', 'verified'])->name('honorario.create');
 Route::get('/expedientes/{id}', [ExpedienteController::class, 'show'])->name('expedientes.show');
+
+Route::get('/expedientesvisados', [ExpedientesVisadosController::class, 'show'])->name('expedientes-visados.show');
+
+Route::get('/misexpedientes', [MisExpedientesController::class, 'show'])->name('mis-expedientes.show');
 
 Route::get('/subida-archivos', [ArchivoController::class, 'create'])->middleware(['auth'])->name('archivos.create');
 //Notificaciones

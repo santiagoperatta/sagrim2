@@ -11,6 +11,8 @@ class SubidaArchivos extends Component
 {
     use WithFileUploads;
 
+	public $expediente;
+	public $expediente_id;
     public $archivoCaja;
     public $archivoInformeVEP;
     public $lamina1;
@@ -28,13 +30,14 @@ class SubidaArchivos extends Component
 
     public function subirArchivos()
     {
+		
         $this->validate();
 
 		$archivoCaja = $this->archivoCaja->store('public/archivos');
 		$archivoInformeVEP = $this->archivoInformeVEP->store('public/archivos');
 		$lamina1 = $this->lamina1->store('public/archivos');
 		$lamina2 = $this->lamina2->store('public/archivos');
-		$lamina3 = $this->lamina3->store('public/archivos');
+		$lamina3 = $this->lamina3->store('public/archivos');		
 
         session()->flash('mensaje', 'Tus archivos se guardaron con éxito.');
 		return redirect()->route('dashboard');

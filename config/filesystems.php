@@ -25,7 +25,7 @@ return [
     | been set up for each driver as an example of the required values.
     |
     | Supported Drivers: "local", "ftp", "sftp", "s3"
-    |
+
     */
 
     'disks' => [
@@ -43,7 +43,6 @@ return [
             'visibility' => 'public',
             'throw' => false,
         ],
-
         's3' => [
             'driver' => 's3',
             'key' => env('AWS_ACCESS_KEY_ID'),

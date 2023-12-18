@@ -17,15 +17,8 @@ class MostrarExpedientes extends Component
     }
 
     public function render()
-    {
-		
-		//$expedientes = Expediente::where('user_id', auth()->user()->id)->paginate(10);
-		//return view('livewire.mostrar-expedientes', [
-		//	'expedientes' => $expedientes
-		//]);
-
-		$expedientes = Expediente::paginate(5);
-
+    {		
+		$expedientes = Expediente::where('estado', 0)->paginate(5);
         return view('livewire.mostrar-expedientes', [
             'expedientes' => $expedientes
         ]);
