@@ -64,7 +64,7 @@
     <script>
  
         document.addEventListener('livewire:initialized', () => {
-        @this.on('mostrarAlerta', expedienteId => {
+        @this.on('mostrarAlerta', expediente_id => {
             Swal.fire({
                 title: '¿Eliminar este expediente?',
                 icon: 'warning',
@@ -74,8 +74,8 @@
                 confirmButtonText: 'Si, eliminar',
                 cancelButtonText: 'Cancelar'
             }).then((result) => {
-            if (result.isConfirmed) {que 
-                @this.dispatch('eliminarExpediente', {id: expedienteId});
+            if (result.isConfirmed) {
+                @this.dispatch('eliminarExpediente', {id: expediente_id});
  
                 Swal.fire(
                     'Eliminado!',

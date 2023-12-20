@@ -47,7 +47,7 @@ Route::get('/expedientesvisados', [ExpedientesVisadosController::class, 'show'])
 
 Route::get('/misexpedientes', [MisExpedientesController::class, 'show'])->name('mis-expedientes.show');
 
-Route::get('/subida-archivos', [ArchivoController::class, 'create'])->middleware(['auth'])->name('archivos.create');
+Route::get('/subida-archivos/{expedienteId}', [ArchivoController::class, 'create'])->middleware(['auth'])->name('archivos.create');
 //Notificaciones
 Route::get('/notificaciones', NotificacionController::class)->middleware(['auth', 'verified'])->name('notificaciones');
 require __DIR__.'/auth.php';

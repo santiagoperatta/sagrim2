@@ -4,6 +4,7 @@ namespace App\Livewire;
 
 use Livewire\Component;
 use Illuminate\Support\Str;
+use Illuminate\Http\Request;
 use Livewire\WithFileUploads;
 use Illuminate\Support\Facades\Storage;
 
@@ -13,6 +14,7 @@ class SubidaArchivos extends Component
 
 	public $expediente;
 	public $expediente_id;
+	public $expedienteId;
     public $archivoCaja;
     public $archivoInformeVEP;
     public $lamina1;
@@ -27,21 +29,31 @@ class SubidaArchivos extends Component
         'lamina2' => 'required|mimes:pdf',
         'lamina3' => 'required|mimes:pdf',
     ];
-
-    public function subirArchivos()
+	
+    public function mount($expediente_id)
     {
-		
-        $this->validate();
-
-		$archivoCaja = $this->archivoCaja->store('public/archivos');
-		$archivoInformeVEP = $this->archivoInformeVEP->store('public/archivos');
-		$lamina1 = $this->lamina1->store('public/archivos');
-		$lamina2 = $this->lamina2->store('public/archivos');
-		$lamina3 = $this->lamina3->store('public/archivos');		
-
-        session()->flash('mensaje', 'Tus archivos se guardaron con éxito.');
-		return redirect()->route('dashboard');
+        $this->expediente_id = $expediente_id;
     }
+
+	public function subirArchivos()
+	{
+		$this->validate();
+	
+		$carpetaExpediente = 'public/archivos/expediente' . $this->expediente_id;
+	
+		if (!Storage::exists($carpetaExpediente)) {
+			Storage::makeDirectory($carpetaExpediente);
+		}
+	
+		$archivoCaja = $this->archivoCaja->storeAs($carpetaExpediente, 'archivoCaja_exp' . $this->expediente_id . '.pdf');
+		$archivoInformeVEP = $this->archivoInformeVEP->storeAs($carpetaExpediente, 'archivoInformeVEP_exp' . $this->expediente_id . '.pdf');
+		$lamina1 = $this->lamina1->storeAs($carpetaExpediente, 'lamina1_exp' . $this->expediente_id . '.pdf');
+		$lamina2 = $this->lamina2->storeAs($carpetaExpediente, 'lamina2_exp' . $this->expediente_id . '.pdf');
+		$lamina3 = $this->lamina3->storeAs($carpetaExpediente, 'lamina3_exp' . $this->expediente_id . '.pdf');
+	
+		session()->flash('mensaje', 'Tus archivos se guardaron con éxito.');
+		return redirect()->route('dashboard');
+	}
 
 
 	public function render()

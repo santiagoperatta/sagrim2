@@ -11,33 +11,24 @@
 					</p>
                 </div>
 
-				@cannot('create', App\Models\Expediente::class)
+					@cannot('create', App\Models\Expediente::class)
 					<div class="p-4 flex gap-3 items-start">
 						<a href="{{route('expedientes.show', $expediente->id)}}" class="text-center bg-gray-700 py-2 px-4 rounded-lg text-white text-xs font-bold uppercase">
 							Corregir
 						</a>
-						
-						<a href="" class="text-center bg-blue-700 py-2 px-4 rounded-lg text-white text-xs font-bold uppercase">
+					</div>
+					@endcannot
+				@if ($expediente->estado == 0)
+					<div class="p-2">
+						<a href="" class="mr-2 text-center bg-blue-700 py-2 px-4 rounded-lg text-white text-xs font-bold uppercase">
 							Editar
 						</a>
 
 						<button
-									wire:click="$dispatch('mostrarAlerta', {id: {{$expediente->id}}})"
-									class="bg-red-600 py-2 px-4 rounded-lg text-white text-xs font-bold uppercase text-center"
-									>Eliminar
+						wire:click="$dispatch('mostrarAlerta', {{ $expediente->id }})"
+							class="bg-red-600 py-2 px-4 rounded-lg text-white text-xs font-bold uppercase text-center"
+							>Eliminar
 						</button>
-					</div>
-				@endcannot
-
-				@can('create', App\Models\Expediente::class)
-				@if ($expediente->estado == 0)
-					<div class="p-4 flex gap-3 items-start">
-						<a href="#" class="text-center bg-gray-700 py-2 px-4 rounded-lg text-white text-xs font-bold uppercase">
-							Continuar
-						</a>
-						<a href="#" class="text-center bg-green-700 py-2 px-4 rounded-lg text-white text-xs font-bold uppercase">
-							Enviar
-						</a>
 					</div>
 				@else
 					<div class="p-4 flex items-start">
@@ -46,8 +37,6 @@
 						</p>
 					</div>
 				@endif
-			@endcan
-			
 			</div>
 	
         @empty
@@ -78,18 +67,20 @@
         @this.on('mostrarAlerta', expedienteId => {
             Swal.fire({
                 title: '¿Eliminar este expediente?',
+                //text: "You won't be able to revert this!",
                 icon: 'warning',
                 showCancelButton: true,
                 confirmButtonColor: '#3085d6',
                 cancelButtonColor: '#d33',
-                confirmButtonText: 'Si, eliminar',
+                confirmButtonText: 'Si, eliminar expediente',
                 cancelButtonText: 'Cancelar'
             }).then((result) => {
-            if (result.isConfirmed) {que 
+            if (result.isConfirmed) {
+                //eliminar la partida desde el servidor
                 @this.dispatch('eliminarExpediente', {id: expedienteId});
  
                 Swal.fire(
-                    'Eliminado!',
+                    '¡Eliminado!',
                     'El expediente se ha eliminado correctamente',
                     'success'
                 )

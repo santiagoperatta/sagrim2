@@ -11,7 +11,7 @@ class MostrarExpedientes extends Component
 	public Expediente $expediente;
 
 	#[On('eliminarExpediente')]
-    public function eliminarExpediente( Expediente $id)
+    public function eliminarExpediente($id)
     {
 		dd($id);
     }

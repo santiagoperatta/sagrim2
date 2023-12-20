@@ -15,20 +15,14 @@ class ArchivoController extends Controller
 
     }
 
-	public function getIdTask(Request $request, $id)
-	{
-		return view('archivo.create', ['expediente_id' => $id]);
-	}	
-
     /**
      * Show the form for creating a new resource.
      */
-    public function create()
-    {
 
-		return view('archivo.create');
-    }
-
+	public function create(Request $request, $id)
+	{
+		return view('archivo.create', ['expediente_id' => $id]);
+	}	
     /**
      * Store a newly created resource in storage.
      */

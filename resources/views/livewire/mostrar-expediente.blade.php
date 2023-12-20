@@ -54,12 +54,13 @@
 				$contadorArchivos = 1;
 				@endphp
 
-				@foreach (Storage::files('public/archivos') as $file)
+				@foreach (Storage::files('public/archivos/expediente' . $expediente->id) as $file)
 					@if(pathinfo($file, PATHINFO_EXTENSION) == 'pdf')
 						<a class="mt-2 inline-flex items-center shadow-sm px-2.5 py-0.5 border border-gray-300 text-sm
-						leading-5 font-medium rounded-full text-gray-700 bg-white hover-bg-gray-50" href="{{ asset('storage/archivos/' . basename($file)) }}" target="_blank">Ver Archivo {{ $contadorArchivos++ }}</a><br>
+						leading-5 font-medium rounded-full text-gray-700 bg-white hover-bg-gray-50" href="{{ asset('storage/archivos/expediente' . $expediente->id . '/' . basename($file)) }}" target="_blank">Ver Archivo {{basename($file) }}</a><br>
 					@endif
 				@endforeach
+
 			</div>
 			
 			<livewire:crear-numero-expediente

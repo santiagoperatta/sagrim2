@@ -12,7 +12,7 @@ class CrearHonorario extends Component
     public $articulo;
     public $precio;
 	public $pasoActual=3;
-
+	public $expedienteId;
     public $aporteComitente = 0;
     public $totalAportes = 0;
     public $totalHonorarios = 0;
