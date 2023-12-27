@@ -9,9 +9,7 @@ class CrearInfoTrabajo extends Component
 {
 	public $nomenclatura;
 	public $nro_cuenta;
-	public $datos;
 	public $tipo_parcela;
-	public $tasa_colegio;
 	public $expedienteId;
     public $expediente_id;
 	public $pasoActual=2;
@@ -19,9 +17,7 @@ class CrearInfoTrabajo extends Component
 	protected $rules = [
 		'nomenclatura' => 'required',
 		'nro_cuenta' => 'required',
-		'datos' => 'required',
 		'tipo_parcela' => 'required',
-		'tasa_colegio' => 'required',
 		'expediente_id' => 'required'
 	];
 	
@@ -32,9 +28,7 @@ class CrearInfoTrabajo extends Component
 		$InfoTrabajo = InfoTrabajo::create([
 			'nomenclatura' => $datos['nomenclatura'],
 			'nro_cuenta' => $datos['nro_cuenta'],
-			'datos' => $datos['datos'],
 			'tipo_parcela' => $datos['tipo_parcela'],
-			'tasa_colegio' => $datos['tasa_colegio'],
 			'expediente_id' => $datos['expediente_id'],
 		]);
 

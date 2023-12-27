@@ -19,7 +19,7 @@
 	
 	<form class="mt-4 md:w-2/3 space-y-5" wire:submit.prevent='crearInfoPersonal'>
 		<div class="mb-2">
-			<x-input-label for="nombre" :value="__('Nombre y Apellido')" />
+			<x-input-label for="nombre" :value="__('Datos del comitente o responsable legal')" />
 			<x-text-input id="nombre" class="block w-full" type="text"  wire:model="nombre"/>
 			<x-input-error :messages="$errors->get('nombre')"/>
 		</div>
@@ -36,7 +36,7 @@
 		</div>
 
 		<div class="mb-2">
-			<x-input-label  for="razon_social" :value="__('Razon Social')" />
+			<x-input-label  for="razon_social" :value="__('En caso de ser una Empresa, Institución o Sociedad Civil.')" />
 			<x-text-input id="razon_social" class="block w-full" type="text" wire:model="razon_social" placeholder="En caso de ser una empresa" :value="old('razon_social')"/>
 			<x-input-error :messages="$errors->get('razon_social')"/>
 		</div>

@@ -3,7 +3,7 @@
 		@if ($expediente->estado !== 1)
 			<form class="flex" wire:submit.prevent="asignarNumeroExpediente">
 				<div class="mr-2">
-					<x-text-input type="text" id="nro_expediente" placeholder="Agregar Numero de Expediente" name="nro_expediente" wire:model="nro_expediente" />
+					<x-text-input type="text" id="nro_expediente" placeholder="Numero de Tramite" name="nro_expediente" wire:model="nro_expediente" />
 				</div>
 				
 				<x-primary-button type="submit" wire:click="asignarNumeroExpediente">

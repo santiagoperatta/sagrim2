@@ -41,9 +41,9 @@
 	
         @empty
 			@cannot('create', App\Models\Expediente::class)
-            <p class="p-3 text-center text-sm text-gray-600">No hay expedientes pendientes</p>
+            <p class="p-3 text-center text-sm text-gray-600">No hay tramites pendientes</p>
 			@else
-			<p class="p-3 text-center text-sm text-gray-600">No hay expedientes creados aun</p>
+			<p class="p-3 text-center text-sm text-gray-600">No hay tramites creados aun</p>
 			@endcannot
         @endforelse
 		

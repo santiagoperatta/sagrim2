@@ -19,7 +19,7 @@
 
 	<form class="mt-4 md:w-2/3 space-y-5" wire:submit.prevent='crearInfoTrabajo'>
 		<div class="mb-2">
-			<x-input-label for="nomenclatura" :value="__('Nomenclatura')" />
+			<x-input-label for="nomenclatura" :value="__('Nomenclatura Catastral')" />
 			<x-text-input id="nomenclatura" class="block w-full" type="text"  wire:model="nomenclatura"/>
 			<x-input-error :messages="$errors->get('nomenclatura')"/>
 		</div>
@@ -28,12 +28,6 @@
 			<x-input-label  for="nro_cuenta" :value="__('Numero de Cuenta')" />
 			<x-text-input id="nro_cuenta" class="block w-full" type="text" wire:model="nro_cuenta" placeholder="Numero de Cuenta" :value="old('nro_cuenta')"/>
 			<x-input-error :messages="$errors->get('nro_cuenta')"/>
-		</div>
-		
-		<div class="mb-2">
-			<x-input-label  for="datos" :value="__('ID Datos')" />
-			<x-text-input id="datos" class="block w-full" type="text" wire:model="datos" placeholder="" :value="old('datos')"/>
-			<x-input-error :messages="$errors->get('datos')"/>
 		</div>
 
 		<div class="mb-2">
@@ -45,12 +39,6 @@
             </select>
             <x-input-error :messages="$errors->get('tipo_parcela')"/>
         </div>
-
-		<div class="mb-2">
-			<x-input-label  for="tasa_colegio" :value="__('Tasa Colegio')" />
-			<x-text-input id="tasa_colegio" class="block w-full" type="text" wire:model="tasa_colegio"  :value="old('tasa_colegio')"/>
-			<x-input-error :messages="$errors->get('tasa_colegio')"/>
-		</div>
 	
 		<div class="mb-2">
 			<x-text-input id="expediente_id" class="block w-full" type="hidden" wire:model="expediente_id" placeholder="ID del Expediente" :value="$expediente_id" />

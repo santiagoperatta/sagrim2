@@ -11,12 +11,11 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('info_trabajos', function (Blueprint $table) {
+        Schema::create('observacions', function (Blueprint $table) {
             $table->id();
-			$table->string('nomenclatura');
-			$table->string('nro_cuenta');
-			$table->enum('tipo_parcela', ['urbana', 'rural']);
 			$table->foreignId('expediente_id')->constrained()->onDelete('cascade');
+			$table->foreignId('user_id')->constrained()->onDelete('cascade');
+			$table->text('comentario');
             $table->timestamps();
         });
     }
@@ -26,6 +25,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('info_trabajos');
+        Schema::dropIfExists('observacions');
     }
 };

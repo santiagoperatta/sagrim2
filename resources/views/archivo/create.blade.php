@@ -1,7 +1,7 @@
 <x-app-layout>
     <x-slot name="header">
         <h2 class="font-semibold text-xl text-gray-800 leading-tight">
-            {{ __('Subida de Archivos') }}
+            {{ __('Seleccion de Archivos') }}
         </h2>
     </x-slot>
 

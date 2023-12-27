@@ -9,8 +9,14 @@ class CrearHonorario extends Component
 {
     public $expediente_id;
     public $honorarios = [];
-    public $articulo;
-    public $precio;
+    public $valor;
+	public $superficie;
+	public $superficie_cubierta;
+    public $unidades;
+	public $plantas;
+	public $nro_lote;
+	public $P;
+	public $L;
 	public $pasoActual=3;
 	public $expedienteId;
     public $aporteComitente = 0;
@@ -19,8 +25,14 @@ class CrearHonorario extends Component
 
     protected $rules = [
         'expediente_id' => 'required',
-        'articulo' => 'required',
-        'precio' => 'required|numeric',
+		'superficie' => 'required|numeric',
+        'superficie_cubierta' => 'required|numeric',
+		'unidades' => 'required|numeric',
+		'plantas' => 'required|numeric',
+		'nro_lote' => 'required|numeric',
+		'P' => 'required',
+		'L' => 'required',
+		'valor' => 'required|numeric',
     ];
 
 	public function crearHonorario()
@@ -29,15 +41,20 @@ class CrearHonorario extends Component
 	
 		Honorario::create([
 			'expediente_id' => $this->expediente_id,
-			'articulo' => $this->articulo,
-			'precio' => $this->precio,
+			'superficie' => $this->superficie,
+			'superficie_cubierta' => $this->superficie_cubierta,
+			'unidades' => $this->unidades,
+			'plantas' => $this->plantas,
+			'nro_lote' => $this->nro_lote,
+			'P' => $this->P,
+			'L' => $this->L,
+			'valor' => $this->valor,
 		]);
 	
-		$this->aporteComitente += $datos['precio'] * 0.09;
-		$this->totalAportes += $datos['precio'] * 0.18;
-		$this->totalHonorarios += $datos['precio'];
+		$this->totalAportes += $datos['valor'] * 0.18;
+		$this->totalHonorarios += $datos['valor'];
 	
-		$this->reset(['articulo', 'precio']);
+		$this->reset(['superficie', 'superficie_cubierta', 'unidades', 'plantas', 'nro_lote', 'P', 'L','valor']);
 
 		$this->honorarios = Honorario::where('expediente_id', $this->expediente_id)->get()->toArray();
 	}

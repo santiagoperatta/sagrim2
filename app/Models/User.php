@@ -3,6 +3,7 @@
 namespace App\Models;
 
 // use Illuminate\Contracts\Auth\MustVerifyEmail;
+use App\Models\Observacion;
 use App\Models\InfoPersonal;
 use Laravel\Sanctum\HasApiTokens;
 use Illuminate\Notifications\Notifiable;
@@ -49,4 +50,9 @@ class User extends Authenticatable
 	{
 		return $this->hasOne(InfoPersonal::class, 'expediente_id', 'expediente_id');
 	}
+
+	public function observaciones()
+    {
+        return $this->hasMany(Observacion::class);
+    }
 }

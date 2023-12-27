@@ -5,6 +5,7 @@ namespace App\Models;
 use App\Models\User;
 use App\Models\Honorario;
 use App\Models\InfoTrabajo;
+use App\Models\Observacion;
 use App\Models\InfoPersonal;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
@@ -47,5 +48,10 @@ class Expediente extends Model
 	public function profesional()
     {
         return $this->belongsTo(User::class, 'user_id');
+    }
+
+	public function observaciones()
+    {
+        return $this->hasMany(Observacion::class);
     }
 }

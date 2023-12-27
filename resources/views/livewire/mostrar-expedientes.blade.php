@@ -16,27 +16,13 @@
 						<a href="{{route('expedientes.show', $expediente->id)}}" class="text-center bg-gray-700 py-2 px-4 rounded-lg text-white text-xs font-bold uppercase">
 							Corregir
 						</a>
-						
-						<a href="" class="text-center bg-blue-700 py-2 px-4 rounded-lg text-white text-xs font-bold uppercase">
-							Editar
-						</a>
-
-						<button
-									wire:click="$dispatch('mostrarAlerta', {id: {{$expediente->id}}})"
-									class="bg-red-600 py-2 px-4 rounded-lg text-white text-xs font-bold uppercase text-center"
-									>Eliminar
-						</button>
 					</div>
 				@endcannot
 
 				@can('create', App\Models\Expediente::class)
 					<div class="p-4 flex gap-3 items-start">
-						<a href="" class="text-center bg-gray-700 py-2 px-4 rounded-lg text-white text-xs font-bold uppercase">
-							Continuar
-						</a>
-						
 						<a href="" class="text-center bg-green-700 py-2 px-4 rounded-lg text-white text-xs font-bold uppercase">
-							Enviar
+							Editar
 						</a>
 					</div>
 				@endcan
@@ -44,9 +30,9 @@
 	
         @empty
 			@cannot('create', App\Models\Expediente::class)
-            <p class="p-3 text-center text-sm text-gray-600">No hay expedientes pendientes</p>
+            <p class="p-3 text-center text-sm text-gray-600">No hay tramites pendientes</p>
 			@else
-			<p class="p-3 text-center text-sm text-gray-600">No hay expedientes creados aun</p>
+			<p class="p-3 text-center text-sm text-gray-600">No hay tramites creados aun</p>
 			@endcannot
         @endforelse
 		

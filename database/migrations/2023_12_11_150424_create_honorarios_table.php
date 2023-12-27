@@ -14,8 +14,14 @@ return new class extends Migration
         Schema::create('honorarios', function (Blueprint $table) {
             $table->id();
             $table->foreignId('expediente_id')->constrained()->onDelete('cascade');;
-            $table->string('articulo');
-            $table->decimal('precio', 10, 2);
+			$table->string('superficie');
+			$table->string('superficie_cubierta');
+			$table->string('unidades');
+			$table->string('plantas');
+			$table->string('nro_lote');
+            $table->string('P');
+			$table->string('L');
+            $table->decimal('valor', 10, 2);
             $table->timestamps();
         });
     }
