@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\InfoPersonal;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 
 class InfoPersonalController extends Controller
 {
@@ -45,7 +46,6 @@ class InfoPersonalController extends Controller
      */
 	public function edit(InfoPersonal $infoPersonal)
 	{
-
 	}
 
     /**

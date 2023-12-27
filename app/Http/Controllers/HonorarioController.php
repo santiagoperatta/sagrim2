@@ -2,8 +2,10 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Honorario;
 use App\Models\InfoPersonal;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 
 class HonorarioController extends Controller
 {
@@ -25,9 +27,10 @@ class HonorarioController extends Controller
 		return view('honorario.create', ['expediente_id' => $expediente_id]);
     }
 
-	public function getIdTask(Request $request, $id)
+	public function getIdTask(Request $request, $id, $expediente_id)
 	{
-		return view('honorario.create',['expediente_id' => $id]);
+		$expedienteId = session('expedienteId');
+		return view('honorario.create',['expediente_id' => $id, 'expediente_id' => $expediente_id]);
 	}
     /**
      * Store a newly created resource in storage.
@@ -48,9 +51,8 @@ class HonorarioController extends Controller
     /**
      * Show the form for editing the specified resource.
      */
-	public function edit(InfoPersonal $infoPersonal)
+	public function edit(Honorario $honorario)
 	{
-
 	}
 
     /**

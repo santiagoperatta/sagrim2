@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\InfoTrabajo;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 
 class InfoTrabajoController extends Controller
 {
@@ -45,7 +46,6 @@ class InfoTrabajoController extends Controller
      */
 	public function edit(InfoTrabajo $infoTrabajo)
 	{
-
 	}
 
     /**

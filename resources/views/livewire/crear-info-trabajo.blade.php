@@ -23,7 +23,7 @@
 			<x-text-input id="nomenclatura" class="block w-full" type="text"  wire:model="nomenclatura"/>
 			<x-input-error :messages="$errors->get('nomenclatura')"/>
 		</div>
-		
+
 		<div class="mb-2">
 			<x-input-label  for="nro_cuenta" :value="__('Numero de Cuenta')" />
 			<x-text-input id="nro_cuenta" class="block w-full" type="text" wire:model="nro_cuenta" placeholder="Numero de Cuenta" :value="old('nro_cuenta')"/>
@@ -44,7 +44,6 @@
 			<x-text-input id="expediente_id" class="block w-full" type="hidden" wire:model="expediente_id" placeholder="ID del Expediente" :value="$expediente_id" />
 			<x-input-error :messages="$errors->get('expediente_id')"/>
 		</div>
-	
 	
 		<x-primary-button class="mt-4">
 			Siguiente

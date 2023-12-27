@@ -13,9 +13,7 @@ class InfoTrabajo extends Model
 	protected $fillable = [
         'nomenclatura',
         'nro_cuenta',
-        'datos',
 		'tipo_parcela',
-		'tasa_colegio',
 		'expediente_id'
     ];
 

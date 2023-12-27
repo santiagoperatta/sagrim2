@@ -38,9 +38,14 @@ Route::middleware('auth')->group(function () {
 });
 
 Route::get('/expedientes/create', [ExpedienteController::class, 'create'] )->middleware(['auth', 'verified'])->name('expedientes.create');
+
 Route::get('/informacion/create/{expedienteId}', [InfoPersonalController::class, 'create'] )->middleware(['auth', 'verified'])->name('info-personal.create');
+Route::get('/informacion/edit', [InfoPersonalController::class, 'edit'])->middleware(['auth', 'verified',]);
+
 Route::get('/infotrabajo/create/{expedienteId}', [InfoTrabajoController::class, 'create'] )->middleware(['auth', 'verified'])->name('info-trabajo.create');
+
 Route::get('/honorarios/create/{expedienteId}', [HonorarioController::class, 'create'] )->middleware(['auth', 'verified'])->name('honorario.create');
+
 Route::get('/expedientes/{id}', [ExpedienteController::class, 'show'])->name('expedientes.show');
 
 Route::get('/expedientesvisados', [ExpedientesVisadosController::class, 'show'])->name('expedientes-visados.show');
