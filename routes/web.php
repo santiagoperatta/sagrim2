@@ -12,17 +12,6 @@ use App\Http\Controllers\NotificacionController;
 use App\Http\Controllers\MisExpedientesController;
 use App\Http\Controllers\ExpedientesVisadosController;
 
-/*
-|--------------------------------------------------------------------------
-| Web Routes
-|--------------------------------------------------------------------------
-|
-| Here is where you can register web routes for your application. These
-| routes are loaded by the RouteServiceProvider and all of them will
-| be assigned to the "web" middleware group. Make something great!
-|
-*/
-
 Route::get('/', function () {
     return view('mis-expedientes.show');
 })->middleware(['auth', 'verified'])->name('mis-expedientes.show');
@@ -40,7 +29,6 @@ Route::middleware('auth')->group(function () {
 Route::get('/expedientes/create', [ExpedienteController::class, 'create'] )->middleware(['auth', 'verified'])->name('expedientes.create');
 
 Route::get('/informacion/create/{expedienteId}', [InfoPersonalController::class, 'create'] )->middleware(['auth', 'verified'])->name('info-personal.create');
-Route::get('/informacion/edit', [InfoPersonalController::class, 'edit'])->middleware(['auth', 'verified',]);
 
 Route::get('/infotrabajo/create/{expedienteId}', [InfoTrabajoController::class, 'create'] )->middleware(['auth', 'verified'])->name('info-trabajo.create');
 
@@ -53,6 +41,7 @@ Route::get('/expedientesvisados', [ExpedientesVisadosController::class, 'show'])
 Route::get('/misexpedientes', [MisExpedientesController::class, 'show'])->name('mis-expedientes.show');
 
 Route::get('/subida-archivos/{expedienteId}', [ArchivoController::class, 'create'])->middleware(['auth'])->name('archivos.create');
+
 //Notificaciones
 Route::get('/notificaciones', NotificacionController::class)->middleware(['auth', 'verified'])->name('notificaciones');
 require __DIR__.'/auth.php';

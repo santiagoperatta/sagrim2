@@ -13,7 +13,7 @@
 
 				@cannot('create', App\Models\Expediente::class)
 					<div class="p-4 flex gap-3 items-start">
-						<a href="" class="text-center bg-blue-700 py-2 px-4 rounded-lg text-white text-xs font-bold uppercase">
+						<a href="{{route('info-personal.edit')}}" class="text-center bg-blue-700 py-2 px-4 rounded-lg text-white text-xs font-bold uppercase">
 							Editar
 						</a>
 

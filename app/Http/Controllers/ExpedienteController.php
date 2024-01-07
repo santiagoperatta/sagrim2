@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\Expediente;
 use App\Models\InfoPersonal;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 
 class ExpedienteController extends Controller
 {
@@ -48,14 +49,9 @@ class ExpedienteController extends Controller
     /**
      * Show the form for editing the specified resource.
      */
-	public function edit(Expediente $expediente)
-	{
-		$this->authorize('update', $expediente);
-	
-		return view('expedientes.edit', [
-			'expediente' => $expediente
-		]);
-	}
+    public function edit(Expediente $expediente)
+    {
+    }
 
     /**
      * Update the specified resource in storage.
