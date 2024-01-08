@@ -6,12 +6,14 @@ use App\Models\Expediente;
 use App\Models\InfoPersonal;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
+use Barryvdh\DomPDF\Facade\Pdf;
 
 class ExpedienteController extends Controller
 {
     /**
      * Display a listing of the resource.
      */
+
     public function index()
     {
 		$this->authorize('viewAny', Expediente::class);
@@ -26,6 +28,22 @@ class ExpedienteController extends Controller
 		return view('expedientes.create');
     }
 
+	public function pdf($id)
+	{
+		// Buscar el expediente por su ID
+		$expediente = Expediente::find($id);
+	
+		// Verificar si el expediente existe
+		if (!$expediente) {
+			// Manejar el caso en que el expediente no existe, por ejemplo, redirigiendo o mostrando un mensaje de error.
+			abort(404, 'Expediente no encontrado');
+		}
+	
+		// Si el expediente existe, carga la vista y genera el PDF
+		$pdf = Pdf::loadView('expedientes.pdf', compact('expediente'));
+		return $pdf->stream();
+	}
+	
     /**
      * Store a newly created resource in storage.
      */
