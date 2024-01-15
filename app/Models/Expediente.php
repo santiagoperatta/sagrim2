@@ -3,6 +3,7 @@
 namespace App\Models;
 
 use App\Models\User;
+use App\Models\Trabajo;
 use App\Models\Honorario;
 use App\Models\InfoTrabajo;
 use App\Models\Observacion;
@@ -16,8 +17,10 @@ class Expediente extends Model
 
 	protected $fillable = [
 		'estado',
+		'enviado',
 		'user_id',
-		'nro_expediente'	
+		'nro_expediente',
+		'admin_id'
 	];
 
 	public function user()
@@ -54,4 +57,9 @@ class Expediente extends Model
     {
         return $this->hasMany(Observacion::class);
     }
+
+	public function admin()
+	{
+		return $this->belongsTo(User::class, 'user_id');
+	}
 }

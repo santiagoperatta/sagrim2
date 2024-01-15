@@ -20,6 +20,7 @@ Route::get('/', function () {
     return view('/dashboard');
 })->middleware(['auth', 'verified'])->name('dashboard');
 
+
 Route::middleware('auth')->group(function () {
     Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');
     Route::patch('/profile', [ProfileController::class, 'update'])->name('profile.update');
@@ -38,8 +39,6 @@ Route::get('/honorarios/create/{expedienteId}', [HonorarioController::class, 'cr
 Route::get('/expedientes/{id}', [ExpedienteController::class, 'show'])->name('expedientes.show');
 
 Route::get('/expedientesvisados', [ExpedientesVisadosController::class, 'show'])->name('expedientes-visados.show');
-
-Route::get('/misexpedientes', [MisExpedientesController::class, 'show'])->name('mis-expedientes.show');
 
 Route::get('/subida-archivos/{expedienteId}', [ArchivoController::class, 'create'])->middleware(['auth'])->name('archivos.create');
 

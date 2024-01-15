@@ -51,7 +51,7 @@ class SubidaArchivos extends Component
 		$lamina2 = $this->lamina2->storeAs($carpetaExpediente, 'lamina2_exp' . $this->expediente_id . '.pdf');
 		$lamina3 = $this->lamina3->storeAs($carpetaExpediente, 'lamina3_exp' . $this->expediente_id . '.pdf');
 	
-		session()->flash('mensaje', 'Tus archivos se guardaron con éxito.');
+		session()->flash('mensaje', 'Tus archivos se guardaron con éxito, recuerda que una vez terminado el tramite, debes enviarlo');
 		return redirect()->route('dashboard');
 	}
 

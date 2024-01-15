@@ -3,6 +3,7 @@
 namespace App\Livewire;
 
 use App\Models\InfoTrabajo;
+use App\Models\Trabajo;
 use Livewire\Component;
 
 class CrearInfoTrabajo extends Component

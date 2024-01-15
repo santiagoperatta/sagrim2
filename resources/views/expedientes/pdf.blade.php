@@ -1,109 +1,107 @@
 <!DOCTYPE html>
-<html lang="es">
+<html>
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Certificado de Visado</title>
     <style>
         body {
             font-family: Arial, sans-serif;
-            margin: 0;
-            padding: 0;
         }
-
-        .container {
-            width: 80%;
-            margin: 0 auto;
-            padding: 20px;
-        }
-
         .header {
+			font-weight: bolder;
+			font-size: 30px;
+            background-color: #6fcf85; /* Fondo verde */
+            color: rgb(255, 255, 255); /* Texto blanco */
+            padding: 10px;
             text-align: center;
-            margin-bottom: 20px;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 20px;
+        }
+        table, th, td {
+            border: 1px solid #ddd;
+        }
+        th, td {
+            padding: 15px;
+            text-align: left;
+        }
+        .expediente-info strong {
+            display: block;
+            margin-bottom: 10px;
         }
 
-        .column {
-            width: 48%;
-            display: inline-block;
-            vertical-align: top;
+		.footer {
+            margin-top: 20px;
+            text-align: center;
         }
 
-        .section {
-            margin-bottom: 20px;
-        }
-
-        .section-title {
-            color: green;
-            font-weight: bold;
-        }
-
-        .honorarios {
-            list-style-type: none;
-            padding: 0;
-        }
-
-        .archivo-link {
-            display: inline-block;
-            margin-top: 5px;
-            padding: 5px 10px;
-            border: 1px solid #ccc;
-            border-radius: 5px;
-            text-decoration: none;
-            color: #333;
-            background-color: #fff;
+        .footer img {
+            max-width: 100px; /* Ajusta el tamaño de la imagen según tus necesidades */
+            margin-bottom: 10px;
         }
     </style>
 </head>
 <body>
-    <div class="container">
-        <div class="header">
-            <h2>Certificado de Visación Numero de Expediente: <strong>{{ $expediente->nro_expediente }}</h2>
+    <div class="header">
+        <div>
+            Certificado de Visación
         </div>
-
-        <div class="column">
-            <div class="section">
-				Certificamos que se ha efectuado la visación de/l/los plano/s de:
-                <p>Usuario: <strong>{{ $expediente->user->name }}</strong></p>
-                <p>Email: <strong>{{ $expediente->user->email }}</strong></p>
-            </div>
-
-            <!-- Otras secciones aquí -->
-
-        </div>
-
-        <div class="column">
-            <div class="section">
-                <p class="section-title">Honorarios:</p>
-                <ul class="honorarios">
-                    @php
-                        $totalHonorarios = 0;
-                    @endphp
-
-                    @foreach($expediente->honorarios as $honorario)
-                        <li><strong>{{ $honorario->articulo }}</strong> - ${{ $honorario->valor }}</li>
-                        
-                        @php
-                            $totalHonorarios += $honorario->valor;
-                        @endphp
-                    @endforeach
-                </ul>
-
-                <p><strong>TOTAL:</strong> ${{ $totalHonorarios }}</p>
-            </div>
-
-            <div class="section">
-                <p class="section-title">Archivos PDF:</p>
-                @php
-                    $contadorArchivos = 1;
-                @endphp
-
-                @foreach (Storage::files('public/archivos/expediente' . $expediente->id) as $file)
-                    @if(pathinfo($file, PATHINFO_EXTENSION) == 'pdf')
-                        <a class="archivo-link" href="{{ asset('storage/archivos/expediente' . $expediente->id . '/' . basename($file)) }}" target="_blank">{{ basename($file) }}</a><br>
-                    @endif
-                @endforeach
-            </div>
+        <div>
+            Expediente N°: {{ $expediente->nro_expediente }}
         </div>
     </div>
+
+    <div class="expediente-info">
+        <p>Certificamos que se ha efectuado la visación de/l/los plano/s de</p>
+        <ul class="honorarios">
+            @foreach($expediente->honorarios as $honorario)
+                <li><strong>{{ $honorario->trabajo }}</strong> - ${{ $honorario->valor }}</li>
+            @endforeach
+        </ul>
+        <p>cuyo Comitente, Titular o Poseedor es</p>
+        <strong style="text-transform:uppercase;">{{ $expediente->infoPersonal->nombre }}</strong>
+        <table>
+            <tr>
+                <td><strong>Nomenclatura</strong> {{ $expediente->infoTrabajo->nomenclatura }}</td>
+                <td><strong>Cuenta</strong> {{ $expediente->infoTrabajo->nro_cuenta }}</td>
+                <td><strong>Tipo de Parcela</strong> {{ $expediente->infoTrabajo->tipo_parcela }}</td>
+            </tr>
+        </table>
+
+		<p>Ubicacion</p>
+		<table>
+			<tr>
+				<td><strong>Superficie total involucrada en la/s tarea/s</strong></td>
+				<td><strong>Superficie</strong></td>
+				<td><strong>Numero de Lote</strong></td>
+			</tr>
+			@foreach($expediente->honorarios as $honorario)
+				<tr>
+					<td>{{ $honorario->superficie_cubierta }}</td>
+					<td>{{ $honorario->superficie }}</td>
+					<td>{{ $honorario->nro_lote }}</td>
+				</tr>
+			@endforeach
+		</table>
+
+		<p> Profesionales responsables por la/s tarea/s</p>
+        <table>
+            <tr>
+                <td><strong>Matricula</strong> {{ $expediente->user->id }}</td>
+                <td><strong>Apellido y Nombre</strong> {{ $expediente->user->name }}</td>
+                <td><strong>Título</strong> Ingeniero Agronomo </td>
+            </tr>
+        </table>
+
+		<p> Se expide el presente CERTIFICADO DE VISACIÓN del expediente Nº	 <span style="font-weight: bold;"> {{ $expediente->nro_expediente }}</span>  del Colegio de Agrimensores
+			de la Provincia de Córdoba, en el día <span style="font-weight: bold;"> {{ $expediente->updated_at }}</span></p>
+			
+			<img src="{{ public_path('images/sello.jpg') }}" alt="Sello" />
+			<hr class="my-4" />
+
+			<div class="footer">
+				<p>Deán Funes 1392 - Córdoba - Tel/Fax (0351) - 4245544 - Email: colagrim@agrimcba.org.ar</p>
+			</div>
+	</div>
 </body>
 </html>

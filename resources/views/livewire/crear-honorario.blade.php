@@ -38,6 +38,33 @@
 					<x-input-error :messages="$errors->get('superficie_cubierta')" class="mt-2" />
 				</div>
 			</div>
+			<div class="mt-1">
+				<x-input-label for="trabajo" :value="__('Trabajo a Realizar')" />
+				<select id="trabajo" class="block w-full border-gray-300 focus:border-green-600 focus:ring focus:ring-green-200 focus:ring-opacity-50 rounded-md shadow-sm" wire:model="trabajo">
+					<option value="Rural">--Seleccione una opcion--</option>
+					<option value="ACTUALIZACION DE PLANO">ACTUALIZACION DE PLANO</option>
+					<option value="ARBITRAJES">ARBITRAJES</option>
+					<option value="ASISTENCIAS TECNICAS">ASISTENCIAS TECNICAS</option>
+					<option value="CAMBIO DE TITULARIDAD">CAMBIO DE TITULARIDAD</option>
+					<option value="CERTIFICADO DE AMOJONAMIENTO">CERTIFICADO DE AMOJONAMIENTO</option>
+					<option value="CERTIFICADO DE VERIFICACION DE ESTADO PARCELARIO">CERTIFICADO DE VERIFICACION DE ESTADO PARCELARIO</option>
+					<option value="CERTIFICADO DE VERIFICACION DE ESTADO PARCELARIO P/ ACTUALIZACION DE MENSURA P/ USUCAPION">CERTIFICADO DE VERIFICACION DE ESTADO PARCELARIO P/ ACTUALIZACION DE MENSURA P/ USUCAPION</option>
+					<option value="CERTIFICADO DE VERIFICACION DE ESTADO PARCELARIO P/ PROTOCOLIZACION DE PLANO">CERTIFICADO DE VERIFICACION DE ESTADO PARCELARIO P/ PROTOCOLIZACION DE PLANO</option>
+					<option value="CONSULTAS">CONSULTAS</option>
+					<option value="CROQUIS PARA REGISTRO DE POSEEDORES">CROQUIS PARA REGISTRO DE POSEEDORES</option>
+					<option value="DESANEXION, MENSURA, UNION, SUBDIVISION Y ANEXION">DESANEXION, MENSURA, UNION, SUBDIVISION Y ANEXION</option>
+					<option value="'DESCRIPCION DE PARCELA">DESCRIPCION DE PARCELA</option>
+					<option value="DESMEJORA">DESMEJORA</option>
+					<option value="DETERMINACION DE RADIO MUNICIPAL">DETERMINACION DE RADIO MUNICIPAL</option>
+					<option value="DETERMINACION Y MATERIALIZACION DE LINEA MUNICIPAL">DETERMINACION Y MATERIALIZACION DE LINEA MUNICIPAL</option>
+					<option value="DICTAMEN PERICIAL">DICTAMEN PERICIAL</option>
+					<option value="ESTUDIO PLANIALTIMETRICO DE CAMINOS Y CANALES">ESTUDIO PLANIALTIMETRICO DE CAMINOS y CANALES</option>
+					<option value="ESTUDIO TECNICO, FINANCIERO Y LEGAL">ESTUDIO TECNICO, FINANCIERO Y LEGAL</option>
+					<option value="GEOREFERENCIACION">GEOREFERENCIACION</option>
+					<option value="INFORME PERICIAL">INFORME PERICIAL</option>
+				</select>
+				<x-input-error :messages="$errors->get('trabajo')"/>
+			</div>
 		</div>
 		
 		<div class="grid grid-cols-2 gap-4">
@@ -97,7 +124,7 @@
 		<div class="mt-4">
 			<ul>
 				@foreach($honorarios as $honorario)
-					<li><strong>{{ $honorario['superficie'] }}</strong> - ${{ $honorario['valor'] }}</li>
+					<li><strong>{{ $honorario['trabajo'] }}</strong> - ${{ $honorario['valor'] }}</li>
 				@endforeach
 			</ul>
 		</div>

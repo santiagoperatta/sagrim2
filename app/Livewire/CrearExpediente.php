@@ -8,12 +8,14 @@ use Livewire\Component;
 class CrearExpediente extends Component
 {
     public $estado;
+	public $enviado;
     public $expedienteId;
 	public $nro_expediente;
 	
 
     protected $rules = [
         'estado' => 'nullable|boolean',
+		'enviado' => 'nullable|boolean',
 		'nro_expediente' => 'nullable|numeric'
     ];
 
@@ -23,6 +25,7 @@ class CrearExpediente extends Component
 
         $expediente = Expediente::create([
             'estado' => $datos['estado'] ?? false,
+			'enviado' => $datos['enviado'] ?? false,
             'user_id' => auth()->user()->id,
 			'nro_expediente' => $datos['nro_expediente'] ?? false,
         ]);

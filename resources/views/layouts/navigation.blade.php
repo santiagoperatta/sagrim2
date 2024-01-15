@@ -5,18 +5,23 @@
             <div class="flex">
                 <!-- Navigation Links -->
                 <div class="hidden space-x-8 sm:-my-px sm:ms-10 sm:flex">
+
+					@can('create', App\Models\Expediente::class)
+					<x-nav-link :href="route('dashboard')" :active="request()->routeIs('dashboard')">
+                        {{ __('Mis Tramites') }}
+                    </x-nav-link>
+					@endcan
+
 					@cannot('create', App\Models\Expediente::class)
                     <x-nav-link :href="route('dashboard')" :active="request()->routeIs('dashboard')">
                         {{ __('Pendientes') }}
                     </x-nav-link>
 
-					<x-nav-link :href="route('expedientes-visados.show')" :active="request()->routeIs('expedientes-visados.show')">
-                        {{ __('Visados') }}
-                    </x-nav-link>
 					@endcannot
 
-					<x-nav-link :href="route('mis-expedientes.show')" :active="request()->routeIs('mis-expedientes.show')">
-                        {{ __('Mis Tramites') }}
+					
+					<x-nav-link :href="route('expedientes-visados.show')" :active="request()->routeIs('expedientes-visados.show')">
+                        {{ __('Visados') }}
                     </x-nav-link>
                 </div>
             </div>

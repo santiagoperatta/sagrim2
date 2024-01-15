@@ -37,7 +37,7 @@
 					@endphp
 
 					@foreach($expediente->honorarios as $honorario)
-						<li><strong>{{ $honorario->articulo }}</strong> - ${{ $honorario->valor }}</li>
+						<li><strong>{{ $honorario->trabajo }}</strong>: ${{ $honorario->valor }}</li>
 						
 						@php
 							$totalHonorarios += $honorario->valor;
@@ -45,7 +45,7 @@
 					@endforeach
 				</ul>
 
-				<p><strong>TOTAL:</strong> ${{ $totalHonorarios }}</p>
+				<p><strong class="text-gray-600">TOTAL:</strong> ${{ $totalHonorarios }}</p>
 			</div>
 
 			<!-- Archivos PDF -->

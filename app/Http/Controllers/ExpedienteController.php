@@ -43,7 +43,6 @@ class ExpedienteController extends Controller
 		$pdf = Pdf::loadView('expedientes.pdf', compact('expediente'));
 		return $pdf->stream();
 	}
-	
     /**
      * Store a newly created resource in storage.
      */
