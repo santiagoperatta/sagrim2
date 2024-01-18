@@ -1,3 +1,15 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+.flowbite-notification {
+    @apply flex items-center p-4 rounded-lg bg-gray-50 dark:bg-gray-800 transition-opacity ease-in duration-300 opacity-100;
+}
+
+.flowbite-notification-content {
+    @apply text-center;
+}
+
+.fade-out {
+    @apply opacity-0;
+}

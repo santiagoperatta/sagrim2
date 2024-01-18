@@ -21,9 +21,7 @@
                 <p class="text-green-600 font-bold">Información del Tramite:</p>
                 <p>Nomenclatura: <strong>{{ $expediente->infoTrabajo->nomenclatura }}</strong></p>
                 <p>Numero de Cuenta: <strong>{{ $expediente->infoTrabajo->nro_cuenta }}</strong></p>
-                <p>Datos: <strong>{{ $expediente->infoTrabajo->datos }}</strong></p>
                 <p>Tipo de Parcela: <strong>{{ $expediente->infoTrabajo->tipo_parcela }}</strong></p>
-                <p>Tasa Colegio: <strong>{{ $expediente->infoTrabajo->tasa_colegio }}</strong></p>
             </div>
         </div>
 

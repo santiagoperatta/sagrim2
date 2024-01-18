@@ -16,12 +16,11 @@ class MostrarExpedientes extends Component
 		$expediente = Expediente::find($expedienteId);
 	
 		if ($expediente) {
+			$expediente->update(['tiene_observacion' => 0]);
 			$expediente->update(['enviado' => 1]);
-			session()->flash('mensaje', '¡Tu expediente se envió con éxito!');
-		} else {
-			session()->flash('error', 'No se pudo encontrar el expediente seleccionado.');
 		}
-	
+
+		session()->flash('mensaje', '¡Tu expediente se envió con éxito!');
 		// Actualizar $this->expediente con el siguiente expediente disponible
 		$this->expediente = Expediente::where('estado', 0)->first();
 	}
@@ -47,11 +46,11 @@ class MostrarExpedientes extends Component
 		$query = Expediente::where('estado', 0);
 	
 		if ($user->rol === 1) {
-			// Si el usuario es administrador, mostrar expedientes enviados
-			$query->where('enviado', 1);
+			// Si el usuario es administrador, mostrar expedientes enviados y no asignados a un admin
+			$query->where('enviado', 1)->where('admin_id', 0);
 		} else {
 			// Si el usuario no es administrador, mostrar expedientes no enviados
-			$query->where('enviado', 0);
+            $query->where('enviado', 0)->where('user_id', $user->id);
 		}
 	
 		$expedientes = $query->paginate(5);

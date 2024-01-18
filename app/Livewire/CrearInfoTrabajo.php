@@ -2,9 +2,10 @@
 
 namespace App\Livewire;
 
-use App\Models\InfoTrabajo;
 use App\Models\Trabajo;
 use Livewire\Component;
+use App\Models\InfoTrabajo;
+use App\Models\InfoPersonal;
 
 class CrearInfoTrabajo extends Component
 {

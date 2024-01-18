@@ -8,7 +8,7 @@ use Illuminate\Http\Request;
 use Livewire\WithFileUploads;
 use Illuminate\Support\Facades\Storage;
 
-class SubidaArchivos extends Component
+class EditarArchivos extends Component
 {
     use WithFileUploads;
 
@@ -50,8 +50,6 @@ class SubidaArchivos extends Component
 		$lamina1 = $this->lamina1->storeAs($carpetaExpediente, 'lamina1_exp' . $this->expediente_id . '.pdf');
 		$lamina2 = $this->lamina2->storeAs($carpetaExpediente, 'lamina2_exp' . $this->expediente_id . '.pdf');
 		$lamina3 = $this->lamina3->storeAs($carpetaExpediente, 'lamina3_exp' . $this->expediente_id . '.pdf');
-		
-		sleep(2);
 		
 		session()->flash('mensaje', 'Tus archivos se guardaron con éxito, recuerda que una vez terminado el tramite, debes enviarlo');
 		return redirect()->route('dashboard');

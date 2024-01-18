@@ -19,6 +19,7 @@ class Expediente extends Model
 		'estado',
 		'enviado',
 		'user_id',
+		'tiene_observacion',
 		'nro_expediente',
 		'admin_id'
 	];

@@ -53,6 +53,9 @@ class HonorarioController extends Controller
      */
 	public function edit(Honorario $honorario)
 	{
+		return view('honorario.edit', [
+			'honorario' => $honorario
+		]);
 	}
 
     /**

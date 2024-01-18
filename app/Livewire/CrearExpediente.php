@@ -9,6 +9,7 @@ class CrearExpediente extends Component
 {
     public $estado;
 	public $enviado;
+	public $tiene_observacion;
     public $expedienteId;
 	public $nro_expediente;
 	
@@ -16,6 +17,7 @@ class CrearExpediente extends Component
     protected $rules = [
         'estado' => 'nullable|boolean',
 		'enviado' => 'nullable|boolean',
+		'tiene_observacion' => 'nullable|boolean',
 		'nro_expediente' => 'nullable|numeric'
     ];
 
@@ -25,6 +27,7 @@ class CrearExpediente extends Component
 
         $expediente = Expediente::create([
             'estado' => $datos['estado'] ?? false,
+			'tiene_observacion' => $datos['tiene_observacion'] ?? false,
 			'enviado' => $datos['enviado'] ?? false,
             'user_id' => auth()->user()->id,
 			'nro_expediente' => $datos['nro_expediente'] ?? false,

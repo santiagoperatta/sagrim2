@@ -5,8 +5,9 @@ namespace App\Livewire;
 use Livewire\Component;
 use App\Models\Expediente;
 use App\Models\Observacion;
-use App\Notifications\NuevaCorreccion;
 use Illuminate\Support\Facades\Auth;
+use App\Notifications\NuevaCorreccion;
+use App\Notifications\NuevaObservacion;
 
 class CrearObservacion extends Component
 {
@@ -41,10 +42,12 @@ class CrearObservacion extends Component
 
             if ($expediente) {
                 $expediente->update(['enviado' => 0]);
+				$expediente->update(['tiene_observacion' => 1]);
             }
         }
 
         $this->expedienteId = $observacion->expediente_id;
+		$expediente->user->notify(new NuevaObservacion($expediente));
 
         // Redirigir al dashboard con un mensaje flash
         return redirect(route('dashboard'))->with('mensaje', $mensaje);

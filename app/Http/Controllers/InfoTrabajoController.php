@@ -3,12 +3,13 @@
 namespace App\Http\Controllers;
 
 use App\Models\InfoTrabajo;
+use App\Models\InfoPersonal;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 
 class InfoTrabajoController extends Controller
 {
-    /**
+    /** 
      * Display a listing of the resource.
      */
     public function index()
@@ -19,11 +20,9 @@ class InfoTrabajoController extends Controller
     /**
      * Show the form for creating a new resource.
      */
-    public function create($expediente_id)
+	public function create($expediente_id)
     {
-		$expedienteId = session('expedienteId');
-
-		return view('info-trabajo.create', ['expediente_id' => $expediente_id]);
+        return view('info-trabajo.create', ['expediente_id' => $expediente_id]);
     }
     /**
      * Store a newly created resource in storage.
@@ -46,6 +45,9 @@ class InfoTrabajoController extends Controller
      */
 	public function edit(InfoTrabajo $infoTrabajo)
 	{
+		return view('info-trabajo.edit', [
+			'infoTrabajo' => $infoTrabajo
+		]);
 	}
 
     /**

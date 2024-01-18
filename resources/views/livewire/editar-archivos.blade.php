@@ -17,7 +17,7 @@
         </div>
     </div>
 
-	<form class="mt-4 md:w-2/3 space-y-5" wire:submit.prevent='subirArchivos'>
+	<form class="mt-4 md:w-2/3 space-y-5" wire:submit.prevent='editarArchivos'>
         <div class="mb-2">
             <x-input-label for="archivoCaja" :value="__('Importe de Caja')" />
             <input type="file" name="archivoCaja" wire:model="archivoCaja">
@@ -47,10 +47,6 @@
             <input type="file" name="lamina3" wire:model="lamina3">
             @error('lamina3') <span class="text-red-500">{{ $message }}</span> @enderror
         </div>
-
-		<a href="/honorarios/edit/{{$expedienteId}}" class="mr-2 inline-flex items-center px-4 py-2 bg-gray-800 border border-transparent rounded-md font-semibold text-xs text-white uppercase tracking-widest hover:bg-gray-700 focus:bg-gray-700 active:bg-gray-900 focus:outline-none focus:ring-2 focus:ring-green-500 focus:ring-offset-2 transition ease-in-out duration-150 mt-4">
-			Anterior
-		</a>
 
 		<x-primary-button class="mt-4" wire:loading.attr="disabled">
 			<span wire:loading wire:target="subirArchivos" class="mr-2">Cargando...</span>

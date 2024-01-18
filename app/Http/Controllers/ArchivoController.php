@@ -42,9 +42,9 @@ class ArchivoController extends Controller
     /**
      * Show the form for editing the specified resource.
      */
-	public function edit(InfoPersonal $infoPersonal)
+	public function edit($id)
 	{
-
+		return view('archivo.edit', ['expediente_id' => $id]);
 	}
 
     /**

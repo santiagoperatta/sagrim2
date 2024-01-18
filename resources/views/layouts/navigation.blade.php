@@ -14,6 +14,10 @@
 
 					@cannot('create', App\Models\Expediente::class)
                     <x-nav-link :href="route('dashboard')" :active="request()->routeIs('dashboard')">
+                        {{ __('Bandeja') }}
+                    </x-nav-link>
+
+					<x-nav-link :href="route('pendientes')" :active="request()->routeIs('pendientes')">
                         {{ __('Pendientes') }}
                     </x-nav-link>
 
