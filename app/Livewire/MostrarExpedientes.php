@@ -46,10 +46,8 @@ class MostrarExpedientes extends Component
 		$query = Expediente::where('estado', 0);
 	
 		if ($user->rol === 1) {
-			// Si el usuario es administrador, mostrar expedientes enviados y no asignados a un admin
-			$query->where('enviado', 1)->where('admin_id', 0);
+			$query->where('enviado', 1)->where('admin_id', null);
 		} else {
-			// Si el usuario no es administrador, mostrar expedientes no enviados
             $query->where('enviado', 0)->where('user_id', $user->id);
 		}
 	
