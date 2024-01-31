@@ -17,6 +17,7 @@ return new class extends Migration
 			$table->boolean('enviado');
 			$table->foreignId('user_id')->constrained()->onDelete('cascade');
 			$table->boolean('tiene_observacion');
+			$table->boolean('controlprevio');
 			$table->timestamps();
 			$table->unsignedBigInteger('admin_id')->nullable();
         });

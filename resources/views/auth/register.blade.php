@@ -21,7 +21,8 @@
 			<select name="rol" id="rol" class="'border-gray-300 focus:border-green-500 focus:ring-green-500 rounded-md shadow-sm'">
 				<option value="">-- Seleccionar un rol --</option>
 				<option value="1">Administrador</option>
-				<option value="2">Profesional</option>				
+				<option value="2">Profesional</option>
+				<option value="3">Control Previo</option>				
 			</select>
         </div>
 

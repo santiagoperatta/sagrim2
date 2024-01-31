@@ -20,6 +20,7 @@ class Expediente extends Model
 		'enviado',
 		'user_id',
 		'tiene_observacion',
+		'controlprevio',
 		'nro_expediente',
 		'admin_id'
 	];

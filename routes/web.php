@@ -3,6 +3,7 @@
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\ArchivoController;
+use App\Http\Controllers\ControlPrevioController;
 use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\HonorarioController;
 use App\Http\Controllers\ExpedienteController;
@@ -44,6 +45,9 @@ Route::get('/honorarios/create/{expedienteId}', [HonorarioController::class, 'cr
 Route::get('/honorarios/edit/{honorarios}', [HonorarioController::class, 'edit'] )->middleware(['auth', 'verified'])->name('honorario.edit');
 
 Route::get('/expedientes/{id}', [ExpedienteController::class, 'show'])->name('expedientes.show');
+
+Route::get('/controlprevio/index', [ControlPrevioController::class, 'index'])->name('controlprevio.index');
+Route::get('/controlprevio', [ControlPrevioController::class, 'show'])->name('controlprevio.show');
 
 Route::get('/expedientesvisados', [ExpedientesVisadosController::class, 'show'])->name('expedientes-visados.show');
 

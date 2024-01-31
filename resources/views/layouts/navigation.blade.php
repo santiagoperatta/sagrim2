@@ -12,7 +12,7 @@
                     </x-nav-link>
 					@endcan
 
-					@cannot('create', App\Models\Expediente::class)
+					@if(auth()->user()->rol == 1)
                     <x-nav-link :href="route('dashboard')" :active="request()->routeIs('dashboard')">
                         {{ __('Bandeja') }}
                     </x-nav-link>
@@ -21,12 +21,19 @@
                         {{ __('Pendientes') }}
                     </x-nav-link>
 
-					@endcannot
+					@endif
 
-					
+					@if(auth()->user()->rol != 3)
 					<x-nav-link :href="route('expedientes-visados.show')" :active="request()->routeIs('expedientes-visados.show')">
                         {{ __('Visados') }}
                     </x-nav-link>
+					@endif
+					
+					@if(auth()->user()->rol == 3)
+						<x-nav-link :href="route('controlprevio.index')" :active="request()->routeIs('controlprevio.index')">
+							{{ __('Control Previo') }}
+						</x-nav-link>
+					@endif
                 </div>
             </div>
 

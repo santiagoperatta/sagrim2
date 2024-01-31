@@ -23,6 +23,8 @@ class MostrarExpedientes extends Component
 		session()->flash('mensaje', '¡Tu expediente se envió con éxito!');
 		// Actualizar $this->expediente con el siguiente expediente disponible
 		$this->expediente = Expediente::where('estado', 0)->first();
+
+        return redirect(route('dashboard'));
 	}
 
 	public function abrirExpediente($expedienteId)
@@ -44,13 +46,13 @@ class MostrarExpedientes extends Component
 	{
 		$user = auth()->user();
 		$query = Expediente::where('estado', 0);
-	
+
 		if ($user->rol === 1) {
 			$query->where('enviado', 1)->where('admin_id', null);
-		} else {
-            $query->where('enviado', 0)->where('user_id', $user->id);
+		} elseif ($user->rol === 2) {
+			$query->where('enviado', 0)->where('user_id', $user->id);
 		}
-	
+
 		$expedientes = $query->paginate(5);
 		return view('livewire.mostrar-expedientes', [
 			'expedientes' => $expedientes

@@ -7,7 +7,25 @@ use App\Models\Expediente;
 use Illuminate\Support\Facades\Auth;
 
 class ExpedientesVisados extends Component
-{
+{	
+	public Expediente $expediente;
+
+	public function enviarControlPrevio($expedienteId)
+	{
+		$expediente = Expediente::find($expedienteId);
+	
+		if ($expediente) {
+			$expediente->update(['controlprevio' => 1]);
+		}
+
+		session()->flash('mensaje', '¡Tu expediente se envió con éxito!');
+
+		// Actualizar $this->expediente con el siguiente expediente disponible
+		$this->expediente = Expediente::where('estado', 0)->first();
+
+        return redirect(route('expedientes-visados.show'));
+	}
+
     public function render()
     {
         // Obtener el ID del usuario actualmente autenticado
