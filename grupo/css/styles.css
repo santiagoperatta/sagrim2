@@ -1,0 +1,30 @@
+.logo {
+	width: 180px;
+	filter: grayscale(100%);
+}
+
+.logo:hover {
+	width: 200px;
+	filter: grayscale(0%);
+}
+
+.logo-link {
+	display: block;
+	text-decoration: none;
+	color: inherit;
+}
+
+nav {
+    position: relative; /* O puedes probar con 'static' o 'relative' */
+    z-index: 1000;
+    background-color: white;
+}
+
+section{
+	z-index: 999;
+}
+
+.fondo1{
+	background-image: url(/images/fondo1.jpg);
+	background-repeat: repeat;
+}

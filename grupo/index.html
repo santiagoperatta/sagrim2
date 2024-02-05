@@ -1,0 +1,483 @@
+<!DOCTYPE html>
+ <html lang="en">
+<head>
+    <link rel="canonical" href="https://https://demo.themesberg.com/landwind/" />
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Grupo Devoto</title>
+
+    <!-- Meta SEO -->
+    <meta name="title" content="Landwind - Tailwind CSS Landing Page">
+    <meta name="description" content="Get started with a free and open-source landing page built with Tailwind CSS and the Flowbite component library.">
+    <meta name="robots" content="index, follow">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <meta name="language" content="English">
+    <meta name="author" content="Themesberg">
+
+    <!-- Social media share -->
+    <meta property="og:title" content="Landwind - Tailwind CSS Landing Page">
+    <meta property="og:site_name" content="Themesberg">
+    <meta property="og:url" content="https://https://demo.themesberg.com/landwind/">
+    <meta property="og:description" content="Get started with a free and open-source landing page for Tailwind CSS built with the Flowbite component library featuring dark mode, hero sections, pricing cards, and more.">
+    <meta property="og:type" content="">
+    <meta property="og:image" content="https://themesberg.s3.us-east-2.amazonaws.com/public/github/landwind/og-image.png">
+    <meta name="twitter:card" content="summary" />
+    <meta name="twitter:site" content="@themesberg" />
+    <meta name="twitter:creator" content="@themesberg" />
+
+    <!-- Favicon -->
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+    <link rel="manifest" href="/site.webmanifest">
+    <meta name="msapplication-TileColor" content="#da532c">
+    <meta name="theme-color" content="#ffffff">
+    <link href="./output.css" rel="stylesheet">
+	<link href="css/styles.css" rel="stylesheet">
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <script async defer src="https://buttons.github.io/buttons.js"></script>
+</head>
+<body>
+    <header class="fixed w-full">
+        <nav class="bg-white border-gray-200 py-2.5 dark:bg-gray-900 nav">
+            <div class="flex flex-wrap items-center justify-between max-w-screen-xl px-4 mx-auto">
+                <a href="#" class="flex items-center">
+                    <img src="./images/logo-light.png" style="width: 80px;" class="sm:hidden" alt="Logo" />
+                    <span class="pl-3 self-center text-xl font-semibold whitespace-nowrap dark:text-white">Grupo Devoto</span>
+                </a>
+                <div class="flex items-center lg:order-2">
+                    <!-- <a href="#" class="text-gray-800 dark:text-white hover:bg-gray-50 focus:ring-4 focus:ring-gray-300 font-medium rounded-lg text-sm px-4 lg:px-5 py-2 lg:py-2.5 sm:mr-2 dark:hover:bg-gray-700 focus:outline-none dark:focus:ring-gray-800">Log in</a> -->
+                    <a href="https://themesberg.com/product/tailwind-css/landing-page" class="text-white bg-green-600 hover:bg-green-700 font-medium rounded-lg text-sm px-4 lg:px-5 py-2 lg:py-2.5 sm:mr-2 lg:mr-0">Whatsapp</a>
+                    <button data-collapse-toggle="mobile-menu-2" type="button" class="inline-flex items-center p-2 ml-1 text-sm text-gray-500 rounded-lg lg:hidden hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-gray-200 dark:text-gray-400 dark:hover:bg-gray-700 dark:focus:ring-gray-600" aria-controls="mobile-menu-2" aria-expanded="false">
+                        <span class="sr-only">Open main menu</span>
+                        <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M3 5a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zM3 10a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zM3 15a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1z" clip-rule="evenodd"></path></svg>
+                        <svg class="hidden w-6 h-6" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M4.293 4.293a1 1 0 011.414 0L10 8.586l4.293-4.293a1 1 0 111.414 1.414L11.414 10l4.293 4.293a1 1 0 01-1.414 1.414L10 11.414l-4.293 4.293a1 1 0 01-1.414-1.414L8.586 10 4.293 5.707a1 1 0 010-1.414z" clip-rule="evenodd"></path></svg>
+                    </button>
+                </div>
+                <div class="items-center justify-between hidden w-full lg:flex lg:w-auto lg:order-1" id="mobile-menu-2">
+                    <ul class="flex flex-col mt-4 font-medium lg:flex-row lg:space-x-8 lg:mt-0">
+						<li>
+                            <a href="#" class="block py-2 pl-3 pr-4 text-gray-700 border-b border-gray-100 hover:bg-gray-50 lg:hover:bg-transparent lg:border-0 lg:hover:text-purple-700 lg:p-0 dark:text-gray-400 lg:dark:hover:text-white dark:hover:bg-gray-700 dark:hover:text-white lg:dark:hover:bg-transparent dark:border-gray-700">Inicio</a>
+                        </li>
+                        <li>
+							<button id="dropdownDefaultButton" data-dropdown-toggle="dropdown" class="block py-2 pl-3 pr-4 text-gray-700 border-b border-gray-100 hover:bg-gray-50 lg:hover:bg-transparent lg:border-0 lg:hover:text-purple-700 lg:p-0 dark:text-gray-400 lg:dark:hover:text-white dark:hover:bg-gray-700 dark:hover:text-white lg:dark:hover:bg-transparent dark:border-gray-700" type="button">Servicios</button>
+								
+								<!-- Dropdown menu -->
+								<div id="dropdown" class="z-10 hidden bg-white divide-y divide-gray-100 rounded-lg shadow w-44 dark:bg-gray-700">
+									<ul class="py-2 text-sm text-gray-700 dark:text-gray-200" aria-labelledby="dropdownDefaultButton">
+									  <li>
+										<a href="#" class="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white">Capyc LTDA.</a>
+									  </li>
+									  <li>
+										<a href="#" class="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white">La Gran Promocion</a>
+									  </li>
+									  <li>
+										<a href="#" class="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white">Sociedad Cosmopolita</a>
+									  </li>
+									  <li>
+										<a href="#" class="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white">Sociedad Sportiva Devoto</a>
+									  </li>
+									  <li>
+										<a href="#" class="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white">Cooperativa Servicios y Obras</a>
+									  </li>
+									  <li>
+										<a href="#" class="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white">Cooperativa El Progreso</a>
+									  </li>
+									  <li>
+										<a href="#" class="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white">Fundesol</a>
+									  </li>
+									  <li>
+										<a href="#" class="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white">Cooperativa Soy Vos</a>
+									  </li>
+									</ul>
+								</div>
+                        </li>
+                        <li>
+                            <a href="#" class="block py-2 pl-3 pr-4 text-gray-700 border-b border-gray-100 hover:bg-gray-50 lg:hover:bg-transparent lg:border-0 lg:hover:text-purple-700 lg:p-0 dark:text-gray-400 lg:dark:hover:text-white dark:hover:bg-gray-700 dark:hover:text-white lg:dark:hover:bg-transparent dark:border-gray-700">Sobre Nosotros</a>
+                        </li>
+                        <li>
+                            <a href="#" class="block py-2 pl-3 pr-4 text-gray-700 border-b border-gray-100 hover:bg-gray-50 lg:hover:bg-transparent lg:border-0 lg:hover:text-purple-700 lg:p-0 dark:text-gray-400 lg:dark:hover:text-white dark:hover:bg-gray-700 dark:hover:text-white lg:dark:hover:bg-transparent dark:border-gray-700">Contacto</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Start block -->
+	<section style="background-image: url(images/fondo2.jpg); background-repeat: repeat-x;">
+        <div class="grid max-w-screen-xl px-4 pt-20 pb-8 mx-auto lg:gap-8 xl:gap-0 lg:py-16 lg:grid-cols-12 lg:pt-28">
+            <div class="mr-auto place-self-center lg:col-span-5">
+                <h1 class="max-w-2xl mb-4 text-4xl font-extrabold leading-none tracking-tight md:text-5xl xl:text-4xl dark:text-white">GRUPO COOPERATIVO <br>MUTUAL DEVOTO</h1>
+                <p class="max-w-2xl mb-6 font-light text-gray-500 lg:mb-8 md:text-lg lg:text-xl dark:text-gray-400">Más de 40 años siendo protagonista del progreso constante de Devoto, acompañando y creando fuentes de trabajo.🔅
+					<br>"La unión, hace la fuerza" 🤝.</p>
+                <div class="space-y-4 sm:flex sm:space-y-0 sm:space-x-4">
+                    <a href="https://github.com/themesberg/landwind" class="inline-flex items-center justify-center w-full px-5 py-3 text-sm font-medium text-center text-gray-900 border border-gray-200 rounded-lg sm:w-auto hover:bg-gray-100 focus:ring-4 focus:ring-gray-100 dark:text-white dark:border-gray-700 dark:hover:bg-gray-700 dark:focus:ring-gray-800">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-whatsapp" viewBox="0 0 16 16">
+							<path d="M13.601 2.326A7.85 7.85 0 0 0 7.994 0C3.627 0 .068 3.558.064 7.926c0 1.399.366 2.76 1.057 3.965L0 16l4.204-1.102a7.9 7.9 0 0 0 3.79.965h.004c4.368 0 7.926-3.558 7.93-7.93A7.9 7.9 0 0 0 13.6 2.326zM7.994 14.521a6.6 6.6 0 0 1-3.356-.92l-.24-.144-2.494.654.666-2.433-.156-.251a6.56 6.56 0 0 1-1.007-3.505c0-3.626 2.957-6.584 6.591-6.584a6.56 6.56 0 0 1 4.66 1.931 6.56 6.56 0 0 1 1.928 4.66c-.004 3.639-2.961 6.592-6.592 6.592m3.615-4.934c-.197-.099-1.17-.578-1.353-.646-.182-.065-.315-.099-.445.099-.133.197-.513.646-.627.775-.114.133-.232.148-.43.05-.197-.1-.836-.308-1.592-.985-.59-.525-.985-1.175-1.103-1.372-.114-.198-.011-.304.088-.403.087-.088.197-.232.296-.346.1-.114.133-.198.198-.33.065-.134.034-.248-.015-.347-.05-.099-.445-1.076-.612-1.47-.16-.389-.323-.335-.445-.34-.114-.007-.247-.007-.38-.007a.73.73 0 0 0-.529.247c-.182.198-.691.677-.691 1.654s.71 1.916.81 2.049c.098.133 1.394 2.132 3.383 2.992.47.205.84.326 1.129.418.475.152.904.129 1.246.08.38-.058 1.171-.48 1.338-.943.164-.464.164-.86.114-.943-.049-.084-.182-.133-.38-.232"/>
+						  </svg> <p class="pl-3">Contactanos</p>
+                    </a> 
+                    <a href="https://www.figma.com/community/file/1125744163617429490" class="inline-flex items-center justify-center w-full px-5 py-3 mb-2 mr-2 text-sm font-medium text-gray-900 bg-white border border-gray-200 rounded-lg sm:w-auto focus:outline-none hover:bg-gray-100 hover:text-blue-700 focus:z-10 focus:ring-4 focus:ring-gray-200 dark:focus:ring-gray-700 dark:bg-gray-800 dark:text-gray-400 dark:border-gray-600 dark:hover:text-white dark:hover:bg-gray-700">
+						<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-instagram" viewBox="0 0 16 16">
+							<path d="M8 0C5.829 0 5.556.01 4.703.048 3.85.088 3.269.222 2.76.42a3.9 3.9 0 0 0-1.417.923A3.9 3.9 0 0 0 .42 2.76C.222 3.268.087 3.85.048 4.7.01 5.555 0 5.827 0 8.001c0 2.172.01 2.444.048 3.297.04.852.174 1.433.372 1.942.205.526.478.972.923 1.417.444.445.89.719 1.416.923.51.198 1.09.333 1.942.372C5.555 15.99 5.827 16 8 16s2.444-.01 3.298-.048c.851-.04 1.434-.174 1.943-.372a3.9 3.9 0 0 0 1.416-.923c.445-.445.718-.891.923-1.417.197-.509.332-1.09.372-1.942C15.99 10.445 16 10.173 16 8s-.01-2.445-.048-3.299c-.04-.851-.175-1.433-.372-1.941a3.9 3.9 0 0 0-.923-1.417A3.9 3.9 0 0 0 13.24.42c-.51-.198-1.092-.333-1.943-.372C10.443.01 10.172 0 7.998 0zm-.717 1.442h.718c2.136 0 2.389.007 3.232.046.78.035 1.204.166 1.486.275.373.145.64.319.92.599s.453.546.598.92c.11.281.24.705.275 1.485.039.843.047 1.096.047 3.231s-.008 2.389-.047 3.232c-.035.78-.166 1.203-.275 1.485a2.5 2.5 0 0 1-.599.919c-.28.28-.546.453-.92.598-.28.11-.704.24-1.485.276-.843.038-1.096.047-3.232.047s-2.39-.009-3.233-.047c-.78-.036-1.203-.166-1.485-.276a2.5 2.5 0 0 1-.92-.598 2.5 2.5 0 0 1-.6-.92c-.109-.281-.24-.705-.275-1.485-.038-.843-.046-1.096-.046-3.233s.008-2.388.046-3.231c.036-.78.166-1.204.276-1.486.145-.373.319-.64.599-.92s.546-.453.92-.598c.282-.11.705-.24 1.485-.276.738-.034 1.024-.044 2.515-.045zm4.988 1.328a.96.96 0 1 0 0 1.92.96.96 0 0 0 0-1.92m-4.27 1.122a4.109 4.109 0 1 0 0 8.217 4.109 4.109 0 0 0 0-8.217m0 1.441a2.667 2.667 0 1 1 0 5.334 2.667 2.667 0 0 1 0-5.334"/>
+						  </svg> <p class="pl-3">Seguinos en Insta</p>
+                    </a>
+                </div>
+            </div>
+            <div class="hidden lg:mt-0 lg:col-span-7 lg:flex">
+                <img src="./images/2.jpg" alt="hero image">
+            </div>               
+        </div>
+    </section>
+	
+    <!-- End block -->
+	<section class="bg-white dark:bg-gray-800 pb-8">
+		<div class="container my-24 mx-auto md:px-12">
+			<section class="mb-32 text-center">
+		
+				<div class="grid px-6 md:grid-cols-2 lg:grid-cols-6">
+					<div class="mx-auto mb-12 lg:mb-0">
+						<a href="enlace_capyc.html" class="logo-link">
+							<img src="images/logos/capyc.jpg" class="logo grayscale max-w-[90px] transition duration-300 transform hover:scale-110" alt="Capyc" />
+						</a>
+					</div>
+					<div class="mx-auto mb-12 lg:mb-0">
+						<a href="enlace_capyc.html" class="logo-link">
+							<img src="images/logos/lgp.jpg" class="logo grayscale max-w-[90px] transition duration-300 transform hover:scale-110" alt="Capyc" />
+						</a>
+					</div>
+					<div class="mx-auto mb-12 lg:mb-0">
+						<a href="enlace_capyc.html" class="logo-link">
+							<img src="images/logos/ssd.jpg" class="logo grayscale max-w-[90px] transition duration-300 transform hover:scale-110" alt="Capyc" />
+						</a>
+					</div>
+					<div class="mx-auto mb-12 lg:mb-0">
+						<a href="enlace_capyc.html" class="logo-link">
+							<img src="images/logos/cosmopolita.jpg" class="logo grayscale max-w-[90px] transition duration-300 transform hover:scale-110" alt="Capyc" />
+						</a>
+					</div>
+					<div class="mx-auto mb-12 lg:mb-0">
+						<a href="enlace_capyc.html" class="logo-link">
+							<img src="images/logos/cospd.jpg" class="logo grayscale max-w-[90px] transition duration-300 transform hover:scale-110" alt="Capyc" />
+						</a>
+					</div>
+					<div class="mx-auto mb-12 lg:mb-0">
+						<a href="enlace_capyc.html" class="logo-link">
+							<img src="images/logos/fundesol.jpg" class="logo grayscale max-w-[90px] transition duration-300 transform hover:scale-110" alt="Capyc" />
+						</a>
+					</div>
+					<!-- Repite este patrón para otros logos -->
+				</div>
+			</section>
+		</div>
+	</section>
+
+	<!--<section class="pt-20 bg-white dark:bg-gray-900">
+		<div class="gap-8 items-center py-8 px-4 mx-auto max-w-screen-xl xl:gap-16 md:grid md:grid-cols-2 sm:py-16 lg:px-6">
+			<img class="w-full dark:hidden" src="images/dulcera.jpg" alt="dashboard image">
+			<img class="w-full hidden dark:block" src="https://flowbite.s3.amazonaws.com/blocks/marketing-ui/cta/cta-dashboard-mockup-dark.svg" alt="dashboard image">
+			<div class="mt-4 md:mt-0">
+				<h2 class="mb-4 text-4xl tracking-tight font-extrabold text-gray-900 dark:text-white">Capyc Seccion Dulces</h2>
+				<p class="mb-6 font-light text-gray-500 md:text-lg dark:text-gray-400">Cuenta con distribuidores en todo el país, siendo sus principales zonas Buenos Aires, Rosario, Córdoba, Salta, Chaco, Formosa, Entre Ríos, Corrientes, entre otras.  
+
+					La calidad de las materias primas es clave para obtener un producto de excelencia, siendo la leche la materia prima principal, abastecida por tambos debidamente habilitados.  </p>
+				<a href="#" class="inline-flex items-center text-white bg-green-600 hover:bg-green-800 focus:ring-4 focus:ring-primary-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center dark:focus:ring-primary-900">
+					Ver mas
+				</a>
+			</div>
+		</div>
+	</section>-->
+
+    <!-- Start block -->
+	<section style="background-image: url(images/fondo3.jpg); background-repeat: repeat-x;">
+        <div class="max-w-screen-xl px-4 py-8 mx-auto text-center lg:py-24 lg:px-6">
+            <figure class="max-w-screen-md mx-auto">
+                <svg class="h-12 mx-auto mb-3 text-gray-400 dark:text-gray-600" viewBox="0 0 24 27" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M14.017 18L14.017 10.609C14.017 4.905 17.748 1.039 23 0L23.995 2.151C21.563 3.068 20 5.789 20 8H24V18H14.017ZM0 18V10.609C0 4.905 3.748 1.038 9 0L9.996 2.151C7.563 3.068 6 5.789 6 8H9.983L9.983 18L0 18Z" fill="currentColor"/>
+                </svg> 
+                <blockquote>
+                    <p class="text-xl font-medium text-gray-900 md:text-2xl dark:text-white">"La responsabilidad es grande, pero uno se suma a un grupo de trabajo que viene desde hace muchos años y a una estructura consolidada por lo cual sólo se trata de acompañar la continuidad de un proceso, empezando a darle mi impronta personal."</p>
+                </blockquote>
+                <figcaption class="flex items-center justify-center mt-6 space-x-3">
+                    <img class="w-6 h-6 rounded-full" src="images/Agustin.jpg" alt="profile picture">
+                    <div class="flex items-center divide-x-2 divide-gray-500 dark:divide-gray-700">
+                        <div class="pr-3 font-medium text-gray-900 dark:text-white">Agustin Benso</div>
+                        <div class="pl-3 text-sm font-light text-gray-500 dark:text-gray-400">Gerente Grupo Devoto</div>
+                    </div>
+                </figcaption>
+            </figure>
+        </div>
+      </section>
+    <!-- End block -->
+	<!-- Start block -->
+	<section style="background-image: url(images/fondo4.jpg); background-repeat: repeat-x;">
+        <div class="items-center max-w-screen-xl px-4 py-8 mx-auto lg:grid lg:grid-cols-4 lg:gap-16 xl:gap-24 lg:py-24 lg:px-6">
+            <div class="col-span-2 mb-8">
+                <p class="text-lg font-medium text-purple-600 dark:text-purple-500">¿Quienes somos?</p>
+                <h2 class="mt-3 mb-4 text-3xl font-extrabold tracking-tight text-gray-900 md:text-3xl dark:text-white">Somos la principal fuente de empleo devotense.</h2>
+                <p class="font-light text-gray-500 sm:text-xl dark:text-gray-400">Más de 40 años siendo protagonista del progreso constante de Devoto, acompañando y creando fuentes de trabajo, bajo el lema "La unión, hace la fuerza"</p>
+            </div>
+            <div class="col-span-2 space-y-8 md:grid md:grid-cols-2 md:gap-12 md:space-y-0">
+                <div>
+                    <svg class="w-10 h-10 mb-2 text-purple-600 md:w-12 md:h-12 dark:text-purple-500" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M2 5a2 2 0 012-2h12a2 2 0 012 2v2a2 2 0 01-2 2H4a2 2 0 01-2-2V5zm14 1a1 1 0 11-2 0 1 1 0 012 0zM2 13a2 2 0 012-2h12a2 2 0 012 2v2a2 2 0 01-2 2H4a2 2 0 01-2-2v-2zm14 1a1 1 0 11-2 0 1 1 0 012 0z" clip-rule="evenodd"></path></svg>
+                    <h3 class="mb-2 text-2xl font-bold dark:text-white">100% enfocados</h3>
+                    <p class="font-light text-gray-500 dark:text-gray-400">Trabajamos al maximo para que el Grupo nunca deje de crecer</p>
+                </div>
+                <div>
+                    <svg class="w-10 h-10 mb-2 text-purple-600 md:w-12 md:h-12 dark:text-purple-500" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path d="M9 6a3 3 0 11-6 0 3 3 0 016 0zM17 6a3 3 0 11-6 0 3 3 0 016 0zM12.93 17c.046-.327.07-.66.07-1a6.97 6.97 0 00-1.5-4.33A5 5 0 0119 16v1h-6.07zM6 11a5 5 0 015 5v1H1v-1a5 5 0 015-5z"></path></svg>
+                    <h3 class="mb-2 text-2xl font-bold dark:text-white">500+ Personas</h3>
+                    <p class="font-light text-gray-500 dark:text-gray-400">Mas de 500 personas conforman al Grupo Devoto</p>
+                </div>
+                <div>
+                    <svg class="w-10 h-10 mb-2 text-purple-600 md:w-12 md:h-12 dark:text-purple-500" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zM4.332 8.027a6.012 6.012 0 011.912-2.706C6.512 5.73 6.974 6 7.5 6A1.5 1.5 0 019 7.5V8a2 2 0 004 0 2 2 0 011.523-1.943A5.977 5.977 0 0116 10c0 .34-.028.675-.083 1H15a2 2 0 00-2 2v2.197A5.973 5.973 0 0110 16v-2a2 2 0 00-2-2 2 2 0 01-2-2 2 2 0 00-1.668-1.973z" clip-rule="evenodd"></path></svg>
+                    <h3 class="mb-2 text-2xl font-bold dark:text-white">15+ sucursales</h3>
+                    <p class="font-light text-gray-500 dark:text-gray-400">Tenemos convenios con diferentes localidades de la zona</p>
+                </div>
+                <div>
+                    <svg class="w-10 h-10 mb-2 text-purple-600 md:w-12 md:h-12 dark:text-purple-500" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path d="M3 1a1 1 0 000 2h1.22l.305 1.222a.997.997 0 00.01.042l1.358 5.43-.893.892C3.74 11.846 4.632 14 6.414 14H15a1 1 0 000-2H6.414l1-1H14a1 1 0 00.894-.553l3-6A1 1 0 0017 3H6.28l-.31-1.243A1 1 0 005 1H3zM16 16.5a1.5 1.5 0 11-3 0 1.5 1.5 0 013 0zM6.5 18a1.5 1.5 0 100-3 1.5 1.5 0 000 3z"></path></svg>
+                    <h3 class="mb-2 text-2xl font-bold dark:text-white">8 Servicios</h3>
+                    <p class="font-light text-gray-500 dark:text-gray-400">Ofrecemos 8 servicios distintos</p>
+                </div>
+            </div>
+        </div>
+      </section>
+    <!-- End block -->
+
+	<section class="bg-white dark:bg-gray-800">
+		<div class="desktop px-5 py-5 relative w-full glide-01">
+			<!-- Slides -->
+			<div style="overflow: hidden;" class="gap-8 items-center py-8 px-4 mx-auto max-w-screen-xl xl:gap-16 md:grid md:grid-cols-2 sm:py-16 lg:px-6" data-glide-el="track">
+				<ul class="relative w-full overflow-hidden p-0 whitespace-no-wrap flex flex-no-wrap">
+					<li class="w-full flex">
+						<div class="w-1/2 flex-shrink-0"> <!-- Utiliza flex-shrink-0 para evitar que la imagen se achique -->
+							<img src="images/dulcera.jpg" class="w-full h-full object-cover rounded-lg" />
+						</div>
+						<div class="w-1/2 p-6 flex flex-col justify-center"> <!-- Utiliza flex y justify-center para centrar el texto verticalmente -->
+							<h2 class="mb-4 text-4xl tracking-tight font-extrabold text-gray-900 dark:text-white">Capyc Sección Dulces</h2>
+							<p style=" max-width: 500px" class="mb-6 font-light text-gray-500 md:text-lg dark:text-gray-400">Cuenta con distribuidores en todo el país, siendo sus principales zonas Buenos Aires, Rosario, Córdoba, Salta, Chaco, Formosa, Entre Ríos, Corrientes, entre otras. La calidad de las materias primas es clave para obtener un producto de excelencia, siendo la leche la materia prima principal, abastecida por tambos debidamente habilitados.</p>
+							<a href="#" style="width: 95px;" class="inline-flex items-center text-white bg-green-600 hover:bg-green-800 focus:ring-4 focus:ring-primary-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center dark:focus:ring-primary-900">
+								Ver más
+							</a>
+						</div>
+					</li>
+					<li class="w-full flex">
+						<div class="w-1/2 flex-shrink-0"> <!-- Utiliza flex-shrink-0 para evitar que la imagen se achique -->
+							<img src="images/ssd.jpg" class="w-full h-full object-cover rounded-lg" />
+						</div>
+						<div class="w-1/2 p-6 flex flex-col justify-center"> <!-- Utiliza flex y justify-center para centrar el texto verticalmente -->
+							<h2 class="mb-4 text-4xl tracking-tight font-extrabold text-gray-900 dark:text-white">Sociedad Sportiva</h2>
+							<p style=" max-width: 500px" class="mb-6 font-light text-gray-500 md:text-lg dark:text-gray-400">Cuenta con distribuidores en todo el país, siendo sus principales zonas Buenos Aires, Rosario, Córdoba, Salta, Chaco, Formosa, Entre Ríos, Corrientes, entre otras. La calidad de las materias primas es clave para obtener un producto de excelencia, siendo la leche la materia prima principal, abastecida por tambos debidamente habilitados.</p>
+							<a href="#" style="width: 95px;" class="inline-flex items-center text-white bg-green-600 hover:bg-green-800 focus:ring-4 focus:ring-primary-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center dark:focus:ring-primary-900">
+								Ver más
+							</a>
+						</div>
+					</li>
+					<li class="w-full flex">
+						<div class="w-1/2 flex-shrink-0"> <!-- Utiliza flex-shrink-0 para evitar que la imagen se achique -->
+							<img src="images/capyc.jpg" class="w-full h-full object-cover rounded-lg" />
+						</div>
+						<div class="w-1/2 p-6 flex flex-col justify-center"> <!-- Utiliza flex y justify-center para centrar el texto verticalmente -->
+							<h2 class="mb-4 text-4xl tracking-tight font-extrabold text-gray-900 dark:text-white">Capyc Envases</h2>
+							<p style=" max-width: 500px" class="mb-6 font-light text-gray-500 md:text-lg dark:text-gray-400">Cuenta con distribuidores en todo el país, siendo sus principales zonas Buenos Aires, Rosario, Córdoba, Salta, Chaco, Formosa, Entre Ríos, Corrientes, entre otras. La calidad de las materias primas es clave para obtener un producto de excelencia, siendo la leche la materia prima principal, abastecida por tambos debidamente habilitados.</p>
+							<a href="#" style="width: 95px;" class="inline-flex items-center text-white bg-green-600 hover:bg-green-800 focus:ring-4 focus:ring-primary-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center dark:focus:ring-primary-900">
+								Ver más
+							</a>
+						</div>
+					</li>
+					<li class="w-full flex">
+						<div class="w-1/2 flex-shrink-0"> <!-- Utiliza flex-shrink-0 para evitar que la imagen se achique -->
+							<img src="images/capyc2.jpg" class="w-full h-full object-cover rounded-lg" />
+						</div>
+						<div class="w-1/2 p-6 flex flex-col justify-center"> <!-- Utiliza flex y justify-center para centrar el texto verticalmente -->
+							<h2 class="mb-4 text-4xl tracking-tight font-extrabold text-gray-900 dark:text-white">Capyc Envases</h2>
+							<p style=" max-width: 500px" class="mb-6 font-light text-gray-500 md:text-lg dark:text-gray-400">Cuenta con distribuidores en todo el país, siendo sus principales zonas Buenos Aires, Rosario, Córdoba, Salta, Chaco, Formosa, Entre Ríos, Corrientes, entre otras. La calidad de las materias primas es clave para obtener un producto de excelencia, siendo la leche la materia prima principal, abastecida por tambos debidamente habilitados.</p>
+							<a href="#" style="width: 95px;" class="inline-flex items-center text-white bg-green-600 hover:bg-green-800 focus:ring-4 focus:ring-primary-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center dark:focus:ring-primary-900">
+								Ver más
+							</a>
+						</div>
+					</li>
+					<li class="w-full flex">
+						<div class="w-1/2 flex-shrink-0"> <!-- Utiliza flex-shrink-0 para evitar que la imagen se achique -->
+							<img src="images/cospd.jpg" class="w-full h-full object-cover rounded-lg" />
+						</div>
+						<div class="w-1/2 p-6 flex flex-col justify-center"> <!-- Utiliza flex y justify-center para centrar el texto verticalmente -->
+							<h2 class="mb-4 text-4xl tracking-tight font-extrabold text-gray-900 dark:text-white">Obras y Servicios</h2>
+							<p style=" max-width: 500px" class="mb-6 font-light text-gray-500 md:text-lg dark:text-gray-400">Cuenta con distribuidores en todo el país, siendo sus principales zonas Buenos Aires, Rosario, Córdoba, Salta, Chaco, Formosa, Entre Ríos, Corrientes, entre otras. La calidad de las materias primas es clave para obtener un producto de excelencia, siendo la leche la materia prima principal, abastecida por tambos debidamente habilitados.</p>
+							<a href="#" style="width: 95px;" class="inline-flex items-center text-white bg-green-600 hover:bg-green-800 focus:ring-4 focus:ring-primary-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center dark:focus:ring-primary-900">
+								Ver más
+							</a>
+						</div>
+					</li>
+				</ul>
+			</div>
+		</div>
+		
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/Glide.js/3.0.2/glide.js"></script>
+		
+		<script>
+			var glide01 = new Glide('.glide-01', {
+				type: 'slider',
+				focusAt: 'center',
+				perView: 1,
+				autoplay: 3000,
+				animationDuration: 700,
+				gap: 0,
+				classes: {
+					activeNav: '[&>*]:bg-slate-700',
+				},
+		
+			});
+		
+			glide01.mount();
+		</script>
+	</section>
+
+    <!-- Start block -->
+	<section style="background-image: url(images/fondo1.jpg); background-repeat: repeat-x;">
+        <div class="max-w-screen-xl px-4 py-8 mx-auto lg:py-24 lg:px-6">
+            <div class="max-w-screen-md mx-auto mb-8 text-center lg:mb-12">
+                <h2 class="mb-4 text-3xl font-extrabold tracking-tight text-gray-900 dark:text-white">Nuestro equipo</h2>
+                <p class="mb-5 font-light text-gray-500 sm:text-xl dark:text-gray-400">Conoce quienes llevan el mando del Grupo Cooperativo Mutual Devoto, poniendo día a día el 100% de si mismos para seguir creciendo.</p>
+            </div>
+            <div class="space-y-8 lg:grid lg:grid-cols-3 sm:gap-6 xl:gap-10 lg:space-y-0">
+                <!-- Pricing Card -->
+                <div class="flex flex-col max-w-lg p-6 mx-auto text-center text-gray-900 bg-white border border-gray-100 rounded-lg shadow dark:border-gray-600 xl:p-8 dark:bg-gray-800 dark:text-white">
+                    <h3 class="mb-4 text-2xl font-semibold">Nombre Apellido</h3>
+                    <p class="font-light text-gray-500 sm:text-lg dark:text-gray-400">Puesto Laboral</p>
+                    <div class="flex items-baseline justify-center my-8">
+					<img class="w-2/3" src="images/Perfil1.jpg" alt="">
+                    </div>
+                    <a href="#" class="text-white bg-green-600 focus:ring-4 focus:ring-purple-200 font-medium rounded-lg text-sm px-5 py-2.5 text-center dark:text-white  dark:focus:ring-purple-900">Get started</a>
+                </div>
+                <div class="flex flex-col max-w-lg p-6 mx-auto text-center text-gray-900 bg-white border border-gray-100 rounded-lg shadow dark:border-gray-600 xl:p-8 dark:bg-gray-800 dark:text-white">
+                    <h3 class="mb-4 text-2xl font-semibold">Agustin Benso</h3>
+                    <p class="font-light text-gray-500 sm:text-lg dark:text-gray-400">Gerente General</p>
+                    <div class="flex items-baseline justify-center my-8">
+					<img class="w-2/3" src="images/Agustin.jpg" alt="">
+                    </div>
+                    <a href="#" class="text-white bg-green-600 focus:ring-4 focus:ring-purple-200 font-medium rounded-lg text-sm px-5 py-2.5 text-center dark:text-white  dark:focus:ring-purple-900">Get started</a>
+                </div>
+				<div class="flex flex-col max-w-lg p-6 mx-auto text-center text-gray-900 bg-white border border-gray-100 rounded-lg shadow dark:border-gray-600 xl:p-8 dark:bg-gray-800 dark:text-white">
+                    <h3 class="mb-4 text-2xl font-semibold">Nombre Apellido</h3>
+                    <p class="font-light text-gray-500 sm:text-lg dark:text-gray-400">Puesto Laboral</p>
+                    <div class="flex items-baseline justify-center my-8">
+					<img class="w-2/3" src="images/Perfil1.jpg" alt="">
+                    </div>
+                    <a href="#" class="text-white bg-green-600 focus:ring-4 focus:ring-purple-200 font-medium rounded-lg text-sm px-5 py-2.5 text-center dark:text-white  dark:focus:ring-purple-900">Get started</a>
+                </div>
+        
+            </div>
+        </div>
+    </section>
+    <!-- End block -->
+    <!-- Start block -->
+    <section class="bg-white dark:bg-gray-800">
+        <div class="max-w-screen-xl px-4 py-8 mx-auto lg:py-16 lg:px-6">
+            <div class="max-w-screen-sm mx-auto text-center">
+                <h2 class="mb-4 text-3xl font-extrabold leading-tight tracking-tight text-gray-900 dark:text-white">Trabaja con Nosotros</h2>
+                <p class="mb-6 font-light text-gray-500 dark:text-gray-400 md:text-lg">Rellena los formularios y <a class="no-underline hover:underline text-green-500 font-bold" href="">postulate</a></p>
+            </div>
+        </div>
+    </section>
+
+	<section style="background-image: url(images/fondocontacto.jpg); background-repeat: repeat-x;" class="bg-white dark:bg-gray-900">
+		<div class="py-8 lg:py-16 px-4 mx-auto max-w-screen-md">
+			<div style="padding:50px;">
+				<h2 class="mb-4 text-4xl tracking-tight font-extrabold text-center text-white">Contactanos</h2>
+				<p class="mb-8 lg:mb-16 font-light text-center text-white sm:text-xl">¿Tenes alguna consulta? Dejala aqui debajo, nos pondremos en contacto a la brevedad.</p>
+			</div>
+			<form action="#" class="bg-white space-y-8 rounded-lg border border-gray-300 p-6">
+				<div class="grid grid-cols-2 gap-4">
+					<div class="mr-4">
+						<label for="name" class="block mb-2 text-sm font-medium text-gray-900 dark:text-gray-300">Tu nombre</label>
+						<input type="text" id="name" class="shadow-sm bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-primary-500 focus:border-primary-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-primary-500 dark:focus:border-primary-500 dark:shadow-sm-light" placeholder="Tu nombre" required>
+					</div>
+					<div>
+						<label for="lastname" class="block mb-2 text-sm font-medium text-gray-900 dark:text-gray-300">Tu apellido</label>
+						<input type="text" id="lastname" class="shadow-sm bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-primary-500 focus:border-primary-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-primary-500 dark:focus:border-primary-500 dark:shadow-sm-light" placeholder="Tu apellido" required>
+					</div>
+				</div>
+				<div class="grid grid-cols-2 gap-4">
+					<div class="mr-4">
+						<label for="email" class="block mb-2 text-sm font-medium text-gray-900 dark:text-gray-300">Tu mail</label>
+						<input type="email" id="email" class="shadow-sm bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-primary-500 focus:border-primary-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-primary-500 dark:focus:border-primary-500 dark:shadow-sm-light" placeholder="name@flowbite.com" required>
+					</div>
+					<div>
+						<label for="phone" class="block mb-2 text-sm font-medium text-gray-900 dark:text-gray-300">Tu telefono</label>
+						<input type="tel" id="phone" class="shadow-sm bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-primary-500 focus:border-primary-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-primary-500 dark:focus:border-primary-500 dark:shadow-sm-light" placeholder="Teléfono" required>
+					</div>
+				</div>
+				<div>
+					<label for="query" class="block mb-2 text-sm font-medium text-gray-900 dark:text-gray-300">Consulta</label>
+					<textarea id="query" class="shadow-sm bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-primary-500 focus:border-primary-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-primary-500 dark:focus:border-primary-500 dark:shadow-sm-light" placeholder="Escribe tu consulta..." rows="4" required></textarea>
+				</div>
+				<button type="submit" class="py-3 px-5 text-sm font-medium text-center text-white rounded-lg bg-green-600 sm:w-fit hover:bg-primary-800 focus:ring-4 focus:outline-none focus:ring-primary-300 dark:bg-primary-600 dark:hover:bg-primary-700 dark:focus:ring-primary-800">Enviar consulta</button>
+			</form>
+		</div>
+	</section>
+
+	<section style="background-image: url(images/fondo1.jpg); background-repeat: repeat-x;">
+		<div class="py-8 lg:py-16 px-4 mx-auto max-w-screen-md">
+			<br><br>
+			<div class="grid grid-cols-1 lg:grid-cols-3 gap-8 my-8">
+				<!-- Primer ícono: Teléfono -->
+				<div class="flex flex-col items-center">
+					<svg xmlns="http://www.w3.org/2000/svg" style="width: 30%; margin-bottom: 20px;" viewBox="0 0 512 512"><path d="M164.9 24.6c-7.7-18.6-28-28.5-47.4-23.2l-88 24C12.1 30.2 0 46 0 64C0 311.4 200.6 512 448 512c18 0 33.8-12.1 38.6-29.5l24-88c5.3-19.4-4.6-39.7-23.2-47.4l-96-40c-16.3-6.8-35.2-2.1-46.3 11.6L304.7 368C234.3 334.7 177.3 277.7 144 207.3L193.3 167c13.7-11.2 18.4-30 11.6-46.3l-40-96z"/></svg>
+					<h3 class="text-lg font-semibold text-gray-900 dark:text-white mb-1">Llamanos</h3>
+					<p class="text-sm text-gray-500 dark:text-gray-400 mb-2 text-center">Ponete en contacto con un miembro del equipo. Estaremos contentos de ayudarte</p>
+					<a href="tel:+123456789" class="text-purple-600 font-bold">+1 (234) 567-89</a>
+				</div>
+	
+				<!-- Segundo ícono: Email -->
+				<div class="flex flex-col items-center">
+					<svg xmlns="http://www.w3.org/2000/svg" style="width: 30%; margin-bottom: 20px;" viewBox="0 0 512 512"><path d="M48 64C21.5 64 0 85.5 0 112c0 15.1 7.1 29.3 19.2 38.4L236.8 313.6c11.4 8.5 27 8.5 38.4 0L492.8 150.4c12.1-9.1 19.2-23.3 19.2-38.4c0-26.5-21.5-48-48-48H48zM0 176V384c0 35.3 28.7 64 64 64H448c35.3 0 64-28.7 64-64V176L294.4 339.2c-22.8 17.1-54 17.1-76.8 0L0 176z"/></svg>
+					<h3 class="text-lg font-semibold text-gray-900 dark:text-white mb-1">Email</h3>
+					<p class="text-sm text-gray-500 dark:text-gray-400 mb-2 text-center">
+						Envianos un correo electrónico para consultas generales. Te responderemos en la brevedad.
+						</p>
+					<a href="mailto:info@example.com" class="text-purple-600 font-bold">consultas@grupodevoto.com</a>
+				</div>
+	
+				<!-- Tercer ícono: Ubicación -->
+				<div class="flex flex-col items-center">
+					<svg xmlns="http://www.w3.org/2000/svg" style="width: 23%; margin-bottom: 20px;" viewBox="0 0 384 512"><path d="M215.7 499.2C267 435 384 279.4 384 192C384 86 298 0 192 0S0 86 0 192c0 87.4 117 243 168.3 307.2c12.3 15.3 35.1 15.3 47.4 0zM192 128a64 64 0 1 1 0 128 64 64 0 1 1 0-128z"/></svg>
+					<h3 class="text-lg font-semibold text-gray-900 dark:text-white mb-1">Ubicación</h3>
+					<p class="text-sm text-gray-500 dark:text-gray-400 mb-2 text-center">Acercate a nuestras oficinas, nuestros horarios de atencion son de 7 a 15</p>
+					<a href="#" class="text-purple-600 font-bold">Bv. 25 de Mayo 123°</a>
+				</div>
+			</div>
+		</div>
+	</section>
+    <!-- End block -->
+    <footer class="bg-white dark:bg-gray-800">
+        <div class="max-w-screen-xl p-4 py-6 mx-auto lg:py-16 md:p-8 lg:p-10">
+            <div class="text-center">
+                <a href="#" class="flex items-center justify-center mb-5 text-2xl font-semibold text-gray-900 dark:text-white">
+                    <img src="./images/logo-light.png" class="w-1/5" alt="Landwind Logo" />
+                </a>
+                <span class="block text-sm text-center text-gray-500 dark:text-gray-400">© 2024 Grupo Cooperativo Mutual Devoto. Todos los derechos reservados.
+                </span>
+                <ul class="flex justify-center mt-5 space-x-5">
+                    <li>
+                        <a href="#" class="text-gray-500 hover:text-gray-900 dark:hover:text-white dark:text-gray-400">
+                            <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M22 12c0-5.523-4.477-10-10-10S2 6.477 2 12c0 4.991 3.657 9.128 8.438 9.878v-6.987h-2.54V12h2.54V9.797c0-2.506 1.492-3.89 3.777-3.89 1.094 0 2.238.195 2.238.195v2.46h-1.26c-1.243 0-1.63.771-1.63 1.562V12h2.773l-.443 2.89h-2.33v6.988C18.343 21.128 22 16.991 22 12z" clip-rule="evenodd" /></svg>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#" class="text-gray-500 hover:text-gray-900 dark:hover:text-white dark:text-gray-400">
+                            <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M12.315 2c2.43 0 2.784.013 3.808.06 1.064.049 1.791.218 2.427.465a4.902 4.902 0 011.772 1.153 4.902 4.902 0 011.153 1.772c.247.636.416 1.363.465 2.427.048 1.067.06 1.407.06 4.123v.08c0 2.643-.012 2.987-.06 4.043-.049 1.064-.218 1.791-.465 2.427a4.902 4.902 0 01-1.153 1.772 4.902 4.902 0 01-1.772 1.153c-.636.247-1.363.416-2.427.465-1.067.048-1.407.06-4.123.06h-.08c-2.643 0-2.987-.012-4.043-.06-1.064-.049-1.791-.218-2.427-.465a4.902 4.902 0 01-1.772-1.153 4.902 4.902 0 01-1.153-1.772c-.247-.636-.416-1.363-.465-2.427-.047-1.024-.06-1.379-.06-3.808v-.63c0-2.43.013-2.784.06-3.808.049-1.064.218-1.791.465-2.427a4.902 4.902 0 011.153-1.772A4.902 4.902 0 015.45 2.525c.636-.247 1.363-.416 2.427-.465C8.901 2.013 9.256 2 11.685 2h.63zm-.081 1.802h-.468c-2.456 0-2.784.011-3.807.058-.975.045-1.504.207-1.857.344-.467.182-.8.398-1.15.748-.35.35-.566.683-.748 1.15-.137.353-.3.882-.344 1.857-.047 1.023-.058 1.351-.058 3.807v.468c0 2.456.011 2.784.058 3.807.045.975.207 1.504.344 1.857.182.466.399.8.748 1.15.35.35.683.566 1.15.748.353.137.882.3 1.857.344 1.054.048 1.37.058 4.041.058h.08c2.597 0 2.917-.01 3.96-.058.976-.045 1.505-.207 1.858-.344.466-.182.8-.398 1.15-.748.35-.35.566-.683.748-1.15.137-.353.3-.882.344-1.857.048-1.055.058-1.37.058-4.041v-.08c0-2.597-.01-2.917-.058-3.96-.045-.976-.207-1.505-.344-1.858a3.097 3.097 0 00-.748-1.15 3.098 3.098 0 00-1.15-.748c-.353-.137-.882-.3-1.857-.344-1.023-.047-1.351-.058-3.807-.058zM12 6.865a5.135 5.135 0 110 10.27 5.135 5.135 0 010-10.27zm0 1.802a3.333 3.333 0 100 6.666 3.333 3.333 0 000-6.666zm5.338-3.205a1.2 1.2 0 110 2.4 1.2 1.2 0 010-2.4z" clip-rule="evenodd" /></svg>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#" class="text-gray-500 hover:text-gray-900 dark:hover:text-white dark:text-gray-400">
+                            <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10c5.51 0 10-4.48 10-10S17.51 2 12 2zm6.605 4.61a8.502 8.502 0 011.93 5.314c-.281-.054-3.101-.629-5.943-.271-.065-.141-.12-.293-.184-.445a25.416 25.416 0 00-.564-1.236c3.145-1.28 4.577-3.124 4.761-3.362zM12 3.475c2.17 0 4.154.813 5.662 2.148-.152.216-1.443 1.941-4.48 3.08-1.399-2.57-2.95-4.675-3.189-5A8.687 8.687 0 0112 3.475zm-3.633.803a53.896 53.896 0 013.167 4.935c-3.992 1.063-7.517 1.04-7.896 1.04a8.581 8.581 0 014.729-5.975zM3.453 12.01v-.26c.37.01 4.512.065 8.775-1.215.25.477.477.965.694 1.453-.109.033-.228.065-.336.098-4.404 1.42-6.747 5.303-6.942 5.629a8.522 8.522 0 01-2.19-5.705zM12 20.547a8.482 8.482 0 01-5.239-1.8c.152-.315 1.888-3.656 6.703-5.337.022-.01.033-.01.054-.022a35.318 35.318 0 011.823 6.475 8.4 8.4 0 01-3.341.684zm4.761-1.465c-.086-.52-.542-3.015-1.659-6.084 2.679-.423 5.022.271 5.314.369a8.468 8.468 0 01-3.655 5.715z" clip-rule="evenodd" /></svg>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </footer>
+    <script src="https://unpkg.com/flowbite@1.4.1/dist/flowbite.js"></script>
+</body>
+</html>
