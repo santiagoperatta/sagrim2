@@ -19,40 +19,28 @@
         @forelse ($expedientes as $expediente)
             <div class="mb-4 bg-white overflow-hidden shadow-sm sm:rounded-lg flex flex-col sm:flex-row items-start sm:items-center justify-between">
                 <div class="p-4 text-gray-900">
-                    <a target="_blank" href="{{route('expedientes.pdf', $expediente->id)}}" class="text-center text-xl font-bold">
-                        Numero de expediente: {{ $expediente->nro_expediente }}
-                    </a>
 					<p class="">
-						Expediente creado por: <strong>{{ $expediente->user->name }}</strong> |
-						Fecha del Visado: <strong>{{ $expediente->updated_at }}</strong>
+						Tramite creado por: <strong>{{ $expediente->user->name }}</strong> <br>
+						Tramite numero: <strong>{{ $expediente->id }}</strong> 
 					</p>
                 </div>
 
-                @if ($expediente->controlprevio == 1)
 					@can('create', App\Models\Expediente::class)
 						<div class="p-4 flex gap-3 items-start">
 							<button class="text-center bg-gray-700 py-2 px-4 rounded-lg text-white text-xs font-bold uppercase" disabled>
-								EN CONTROL
+								ENVIADO
 							</button>
 						</div>
 					@endcan
-                @else
-                    @can('create', App\Models\Expediente::class)
-                        <div class="p-4 flex gap-3 items-start">
-                            <a href="#" wire:click="enviarControlPrevio({{ $expediente->id }})" class="text-center bg-blue-700 py-2 px-4 rounded-lg text-white text-xs font-bold uppercase">
-                                Enviar a CP
-                            </a>
-                        </div>
-                    @endcan
-                @endif
+
 			</div>
 			
 	
         @empty
 			@cannot('create', App\Models\Expediente::class)
-            <p class="p-3 text-center text-sm text-gray-600">No hay expedientes visados</p>
+            <p class="p-3 text-center text-sm text-gray-600">No hay expedientes enviados</p>
 			@else
-            <p class="p-3 text-center text-sm text-gray-600">No hay expedientes visados</p>
+			<p class="p-3 text-center text-sm text-gray-600">No hay expedientes enviados aun</p>
 			@endcannot
         @endforelse
 		

@@ -8,7 +8,7 @@
     <div class="py-12">
         <div class="max-w-7xl mx-auto sm:px-6 lg:px-8">
 			@if (session()->has('mensaje'))
-			<div role="alert" class="w-1/2 px-4 py-4 text-base text-white bg-gray-900 rounded-lg font-regular">
+			<div role="alert" class="w-full mb-6 px-4 py-4 text-base text-gray-500 rounded-lg font-regular">
 				<svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2"
 					stroke="currentColor" class="w-6 h-6">
 					<path stroke-linecap="round" stroke-linejoin="round"

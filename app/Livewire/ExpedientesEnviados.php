@@ -6,22 +6,9 @@ use Livewire\Component;
 use App\Models\Expediente;
 use Illuminate\Support\Facades\Auth;
 
-class ExpedientesVisados extends Component
+class ExpedientesEnviados extends Component
 {	
 	public Expediente $expediente;
-
-	public function enviarControlPrevio($expedienteId)
-	{
-		$expediente = Expediente::find($expedienteId);
-	
-		if ($expediente) {
-			$expediente->update(['controlprevio' => 1]);
-		}
-
-		session()->flash('mensaje', '¡Tu expediente se envió con éxito!');
-
-        return redirect(route('expedientes-visados.show'));
-	}
 
     public function render()
     {
@@ -29,14 +16,14 @@ class ExpedientesVisados extends Component
         $userId = Auth::id();
 
         // Obtener los expedientes visados del usuario actual o aquellos que él mismo visó (si es administrador)
-        $expedientes = Expediente::where('estado', 1)
+        $expedientes = Expediente::where('enviado', 1)
             ->where(function ($query) use ($userId) {
                 $query->where('user_id', $userId)
                     ->orWhere('admin_id', $userId);
             })
             ->paginate(5);
 
-        return view('livewire.expedientes-visados', [
+        return view('livewire.expedientes-enviados', [
             'expedientes' => $expedientes
         ]);
     }

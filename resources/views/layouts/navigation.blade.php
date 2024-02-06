@@ -10,6 +10,10 @@
 					<x-nav-link :href="route('dashboard')" :active="request()->routeIs('dashboard')">
                         {{ __('Mis Tramites') }}
                     </x-nav-link>
+
+					<x-nav-link :href="route('expedientes-enviados.show')" :active="request()->routeIs('expedientes-enviados.show')">
+                        {{ __('Enviados') }}
+                    </x-nav-link>
 					@endcan
 
 					@if(auth()->user()->rol == 1)

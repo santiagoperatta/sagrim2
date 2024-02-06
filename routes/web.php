@@ -3,15 +3,16 @@
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\ArchivoController;
-use App\Http\Controllers\ControlPrevioController;
 use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\HonorarioController;
 use App\Http\Controllers\ExpedienteController;
 use App\Http\Controllers\InfoTrabajoController;
 use App\Http\Controllers\InfoPersonalController;
 use App\Http\Controllers\NotificacionController;
+use App\Http\Controllers\ControlPrevioController;
 use App\Http\Controllers\MisExpedientesController;
 use App\Http\Controllers\ExpedientesVisadosController;
+use App\Http\Controllers\ExpedientesEnviadosController;
 
 Route::get('/', function () {
     return view('mis-expedientes.show');
@@ -50,6 +51,7 @@ Route::get('/controlprevio/index', [ControlPrevioController::class, 'index'])->n
 Route::get('/controlprevio', [ControlPrevioController::class, 'show'])->name('controlprevio.show');
 
 Route::get('/expedientesvisados', [ExpedientesVisadosController::class, 'show'])->name('expedientes-visados.show');
+Route::get('/expedientesenviados', [ExpedientesEnviadosController::class, 'show'])->name('expedientes-enviados.show');
 
 Route::get('/subida-archivos/{expedienteId}', [ArchivoController::class, 'create'])->middleware(['auth'])->name('archivos.create');
 Route::get('/subida-archivos/edit/{expedienteId}', [ArchivoController::class, 'edit'])->middleware(['auth'])->name('archivos.edit');
