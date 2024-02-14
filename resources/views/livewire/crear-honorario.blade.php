@@ -80,23 +80,8 @@
 				<x-input-error :messages="$errors->get('plantas')" class="mt-2" />
 			</div>
 		</div>
-	
-		<div class="grid grid-cols-2 gap-4">
-			<div class="mt-1">
-				<x-input-label for="nro_lote" :value="__('Numero de Lote')" />
-				<x-text-input id="nro_lote" class="block mt-1 w-full px-4 py-2" type="text" wire:model.lazy="nro_lote" :value="old('nro_lote')" />
-				<x-input-error :messages="$errors->get('nro_lote')" class="mt-2" />
-			</div>
 
-			<div class="mt-1">
-				<x-input-label for="valor" :value="__('Valor')" />
-				<x-text-input id="valor" class="block mt-1 w-full px-4 py-2" type="text" wire:model.lazy="valor" :value="old('valor')" />
-				<x-input-error :messages="$errors->get('valor')" class="mt-2" />
-			</div>
-		
-		</div>
-	
-		<div class="grid grid-cols-3 gap-4">
+		<div class="grid grid-cols-2 gap-4">
 			<div class="mt-1">
 				<x-input-label for="P" :value="__('P')" />
 				<x-text-input id="P" class="block mt-1 w-full px-4 py-2" type="text" wire:model.lazy="P" :value="old('P')" />
@@ -109,34 +94,60 @@
 				<x-input-error :messages="$errors->get('L')" class="mt-2" />
 			</div>
 		</div>
-		
+	
+		<div class="grid grid-cols-2 gap-4">
+			<div class="mt-1">
+				<x-input-label for="nro_lote" :value="__('Cantidad de Lotes')" />
+				<x-text-input id="nro_lote" class="block mt-1 w-full px-4 py-2" type="text" wire:model.lazy="nro_lote" :value="old('nro_lote')" />
+				<x-input-error :messages="$errors->get('nro_lote')" class="mt-2" />
+			</div>
 
-		<x-primary-button class="mt-4">
-            Agregar Honorario
-        </x-primary-button>
+			<div class="mt-1">
+				<x-input-label for="valor" :value="__('Valor')" />
+				<x-text-input id="valor" class="block mt-1 w-full px-4 py-2" type="text" wire:model.lazy="valor" :value="old('valor')" />
+				<x-input-error :messages="$errors->get('valor')" class="mt-2" />
+			</div>
+		</div>
+
+		<div class="mt-4">
+			<p>Total de Aportes: <span id="totalAportes">0.00</span></p>
+			<p>Total de Honorarios: <span id="totalHonorarios">0.00</span></p>
+		</div>
+	
 
 		<a href="/infotrabajo/edit/{{$expedienteId}}" class="mr-2 inline-flex items-center px-4 py-2 bg-gray-800 border border-transparent rounded-md font-semibold text-xs text-white uppercase tracking-widest hover:bg-gray-700 focus:bg-gray-700 active:bg-gray-900 focus:outline-none focus:ring-2 focus:ring-green-500 focus:ring-offset-2 transition ease-in-out duration-150 mt-4">
 			Anterior
 		</a>
 
-		<a href="/subida-archivos/{{$this->expedienteId}}" class="'inline-flex items-center px-4 py-2 bg-gray-800 border border-transparent rounded-md font-semibold text-xs text-white uppercase tracking-widest hover:bg-gray-700 focus:bg-gray-700 active:bg-gray-900 focus:outline-none focus:ring-2 focus:ring-green-500 focus:ring-offset-2 transition ease-in-out duration-150 mt-4">
-            SIGUIENTE
-        </a>
+		<x-primary-button class="mt-4">
+			Siguiente
+		</x-primary-button>
 
     </form>
-
-	@if(count($honorarios) > 0)
-		<div class="mt-4">
-			<ul>
-				@foreach($honorarios as $honorario)
-					<li><strong>{{ $honorario['trabajo'] }}</strong> - ${{ $honorario['valor'] }}</li>
-				@endforeach
-			</ul>
-		</div>
-
-		<div>
-			<p><strong>Total de aportes previsionales (18%):</strong> ${{ $totalAportes }}</p>
-			<p><strong>Total de honorarios ingresados:</strong> ${{ $totalHonorarios }}</p>
-		</div>
-	@endif
 </div>
+
+<script>
+    document.addEventListener('DOMContentLoaded', function () {
+        // Obtener referencias a los campos del formulario
+        const valorInput = document.getElementById('valor');
+        const totalAportesOutput = document.getElementById('totalAportes');
+        const totalHonorariosOutput = document.getElementById('totalHonorarios');
+
+        // Función para calcular los totales
+        function calcularTotales() {
+            const valor = parseFloat(valorInput.value) || 0;
+            const totalAportes = valor * 0.18;
+            const totalHonorarios = valor;
+
+            // Mostrar los totales calculados
+            totalAportesOutput.textContent = totalAportes.toFixed(2);
+            totalHonorariosOutput.textContent = totalHonorarios.toFixed(2);
+        }
+
+        // Escuchar cambios en el campo de valor
+        valorInput.addEventListener('input', calcularTotales);
+
+        // Calcular los totales al cargar la página
+        calcularTotales();
+    });
+</script>

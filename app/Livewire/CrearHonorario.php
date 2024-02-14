@@ -8,7 +8,7 @@ use Livewire\Component;
 class CrearHonorario extends Component
 {
     public $expediente_id;
-    public $honorarios = [];
+    public $honorarios;
     public $valor;
 	public $trabajo;
 	public $superficie;
@@ -41,7 +41,7 @@ class CrearHonorario extends Component
 	{
 		$datos = $this->validate();
 	
-		Honorario::create([
+		$honorario = Honorario::create([
 			'expediente_id' => $this->expediente_id,
 			'superficie' => $this->superficie,
 			'trabajo' => $this->trabajo,
@@ -54,12 +54,12 @@ class CrearHonorario extends Component
 			'valor' => $this->valor,
 		]);
 	
-		$this->totalAportes += $datos['valor'] * 0.18;
-		$this->totalHonorarios += $datos['valor'];
-	
-		$this->reset(['superficie', 'trabajo' ,'superficie_cubierta', 'unidades', 'plantas', 'nro_lote', 'P', 'L','valor']);
+        $this->totalAportes += $this->valor * 0.18;
+        $this->totalHonorarios += $this->valor;
+		
+		$this->expedienteId = $honorario->expediente_id;
 
-		$this->honorarios = Honorario::where('expediente_id', $this->expediente_id)->get()->toArray();
+		return redirect()->route('archivos.create', ['expedienteId' => $this->expedienteId]);
 	}
 
     public function render()

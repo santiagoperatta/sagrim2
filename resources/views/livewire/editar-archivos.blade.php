@@ -19,7 +19,7 @@
 
 	<form class="mt-4 md:w-2/3 space-y-5" wire:submit.prevent='editarArchivos'>
         <div class="mb-2">
-            <x-input-label for="archivoCaja" :value="__('Importe de Caja')" />
+            <x-input-label for="archivoCaja" :value="__('Boleta de Caja')" />
             <input type="file" name="archivoCaja" wire:model="archivoCaja">
             @error('archivoCaja') <span class="text-red-500">{{ $message }}</span> @enderror
         </div>

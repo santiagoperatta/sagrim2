@@ -23,10 +23,7 @@
                 <p>Numero de Cuenta: <strong>{{ $expediente->infoTrabajo->nro_cuenta }}</strong></p>
                 <p>Tipo de Parcela: <strong>{{ $expediente->infoTrabajo->tipo_parcela }}</strong></p>
             </div>
-        </div>
 
-        <!-- Segunda columna -->
-		<div class="flex-1">
 			<div class="mb-5">
 				<p class="text-green-600 font-bold">Honorarios:</p>
 				<ul>
@@ -45,8 +42,12 @@
 
 				<p><strong class="text-gray-600">TOTAL:</strong> ${{ $totalHonorarios }}</p>
 			</div>
+        </div>
 
+        <!-- Segunda columna -->
+		<div class="flex-1">
 			<!-- Archivos PDF -->
+			<p class="text-green-600 font-bold">Archivos:</p>
 			<div class="mb-5">
 				@php
 				$contadorArchivos = 1;
@@ -60,10 +61,13 @@
 				@endforeach
 
 			</div>
+
+			<div class="mb-5">
+				<livewire:crear-observacion
+				:expediente_id="$expediente->id" />
+			</div>
 		</div>
 
-		<livewire:crear-observacion
-		:expediente_id="$expediente->id" />
     </div>
 	<livewire:crear-numero-expediente
 	:expediente_id="$expediente->id" />

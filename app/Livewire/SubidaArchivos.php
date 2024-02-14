@@ -16,6 +16,7 @@ class SubidaArchivos extends Component
 	public $expediente_id;
 	public $expedienteId;
     public $archivoCaja;
+	public $comprobantePago;
     public $archivoInformeVEP;
     public $lamina1;
     public $lamina2;
@@ -25,6 +26,7 @@ class SubidaArchivos extends Component
     protected $rules = [
         'archivoCaja' => 'required|mimes:pdf',
         'archivoInformeVEP' => 'required|mimes:pdf',
+		'comprobantePago' => 'required|mimes:pdf',
         'lamina1' => 'required|mimes:pdf',
         'lamina2' => 'required|mimes:pdf',
         'lamina3' => 'required|mimes:pdf',
@@ -33,6 +35,11 @@ class SubidaArchivos extends Component
     public function mount($expediente_id)
     {
         $this->expediente_id = $expediente_id;
+    }
+
+	public function abrirArchivo($url)
+    {
+        return redirect()->away($url);
     }
 
 	public function subirArchivos()
@@ -47,6 +54,7 @@ class SubidaArchivos extends Component
 	
 		$archivoCaja = $this->archivoCaja->storeAs($carpetaExpediente, 'archivoCaja_exp' . $this->expediente_id . '.pdf');
 		$archivoInformeVEP = $this->archivoInformeVEP->storeAs($carpetaExpediente, 'archivoInformeVEP_exp' . $this->expediente_id . '.pdf');
+		$comprobantePago = $this->comprobantePago->storeAs($carpetaExpediente, 'comprobantePago_exp' . $this->expediente_id . '.pdf');
 		$lamina1 = $this->lamina1->storeAs($carpetaExpediente, 'lamina1_exp' . $this->expediente_id . '.pdf');
 		$lamina2 = $this->lamina2->storeAs($carpetaExpediente, 'lamina2_exp' . $this->expediente_id . '.pdf');
 		$lamina3 = $this->lamina3->storeAs($carpetaExpediente, 'lamina3_exp' . $this->expediente_id . '.pdf');

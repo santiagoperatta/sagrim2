@@ -55,7 +55,7 @@
         <p>Certificamos que se ha efectuado la visación de/l/los plano/s de</p>
         <ul class="honorarios">
             @foreach($expediente->honorarios as $honorario)
-                <li><strong>{{ $honorario->trabajo }}</strong> - ${{ $honorario->valor }}</li>
+                <li><strong>{{ $honorario->trabajo }}</strong></li>
             @endforeach
         </ul>
         <p>cuyo Comitente, Titular o Poseedor es</p>
@@ -73,7 +73,7 @@
 			<tr>
 				<td><strong>Superficie total involucrada en la/s tarea/s</strong></td>
 				<td><strong>Superficie</strong></td>
-				<td><strong>Numero de Lote</strong></td>
+				<td><strong>Cantidad de Lotes</strong></td>
 			</tr>
 			@foreach($expediente->honorarios as $honorario)
 				<tr>
