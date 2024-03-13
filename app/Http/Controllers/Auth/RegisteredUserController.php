@@ -42,7 +42,7 @@ class RegisteredUserController extends Controller
 				'max:255',
 				'unique:'.User::class,
 				function ($attribute, $value, $fail) {
-					if (strpos($value, '@agrimcba.com.ar') === false) {
+					if (strpos($value, '@agrimcba.org.ar') === false) {
 						$fail('El correo electrónico debe ser de dominio @agrimcba.com.ar');
 					}
 				}
