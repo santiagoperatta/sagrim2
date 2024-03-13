@@ -2,16 +2,18 @@
 
 namespace App\Http\Controllers\Auth;
 
-use App\Http\Controllers\Controller;
 use App\Models\User;
-use App\Providers\RouteServiceProvider;
-use Illuminate\Auth\Events\Registered;
-use Illuminate\Http\RedirectResponse;
+use Illuminate\View\View;
+use App\Mail\ConfirmAccount;
 use Illuminate\Http\Request;
+use Illuminate\Validation\Rules;
+use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Hash;
-use Illuminate\Validation\Rules;
-use Illuminate\View\View;
+use Illuminate\Support\Facades\Mail;
+use Illuminate\Http\RedirectResponse;
+use Illuminate\Auth\Events\Registered;
+use App\Providers\RouteServiceProvider;
 
 class RegisteredUserController extends Controller
 {
@@ -40,8 +42,8 @@ class RegisteredUserController extends Controller
 				'max:255',
 				'unique:'.User::class,
 				function ($attribute, $value, $fail) {
-					if (strpos($value, '@sagrim.com.ar') === false) {
-						$fail('El correo electrónico debe ser de dominio @sagrim.com.ar');
+					if (strpos($value, '@agrimcba.com.ar') === false) {
+						$fail('El correo electrónico debe ser de dominio @agrimcba.com.ar');
 					}
 				}
 			],
@@ -59,8 +61,11 @@ class RegisteredUserController extends Controller
 
         event(new Registered($user));
 
-        Auth::login($user);
+		Mail::to($user->email)->send(new ConfirmAccount($user));
 
-        return redirect(RouteServiceProvider::HOME);
+		// Autenticar al usuario y redirigirlo
+		Auth::login($user);
+	
+		return redirect(RouteServiceProvider::HOME);
     }
 }
