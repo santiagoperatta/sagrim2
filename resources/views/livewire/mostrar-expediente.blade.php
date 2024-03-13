@@ -60,6 +60,13 @@
 					@endif
 				@endforeach
 
+                <form action="{{ route('descargar-archivos') }}" method="POST">
+                    @csrf
+                    <input type="hidden" name="expediente_id" value="{{ $expediente->id }}">
+                    <button type="submit" class="mt-2 inline-flex items-center px-4 py-2 bg-green-600 border border-transparent rounded-md font-semibold text-xs text-white uppercase tracking-widest hover:bg-blue-600 focus:outline-none focus:border-blue-700 focus:ring focus:ring-blue-200 active:bg-blue-700 transition ease-in-out duration-150">
+						<p>Descargar</p><i class="fa-solid fa-download text-white ml-2"></i>
+                    </button>
+                </form>
 			</div>
 
 			<div class="mb-5">

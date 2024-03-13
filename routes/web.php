@@ -47,7 +47,6 @@ Route::get('/honorarios/edit/{honorarios}', [HonorarioController::class, 'edit']
 
 Route::get('/expedientes/{id}', [ExpedienteController::class, 'show'])->name('expedientes.show');
 
-Route::get('/controlprevio/index', [ControlPrevioController::class, 'index'])->name('controlprevio.index');
 Route::get('/controlprevio', [ControlPrevioController::class, 'show'])->name('controlprevio.show');
 
 Route::get('/expedientesvisados', [ExpedientesVisadosController::class, 'show'])->name('expedientes-visados.show');
@@ -55,6 +54,8 @@ Route::get('/expedientesenviados', [ExpedientesEnviadosController::class, 'show'
 
 Route::get('/subida-archivos/{expedienteId}', [ArchivoController::class, 'create'])->middleware(['auth'])->name('archivos.create');
 Route::get('/subida-archivos/edit/{expedienteId}', [ArchivoController::class, 'edit'])->middleware(['auth'])->name('archivos.edit');
+
+Route::post('/descargar-archivos', [ArchivoController::class, 'descargarArchivos'])->name('descargar-archivos');
 
 //Notificaciones
 Route::get('/notificaciones', NotificacionController::class)->middleware(['auth', 'verified'])->name('notificaciones');

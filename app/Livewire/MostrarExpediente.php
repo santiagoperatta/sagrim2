@@ -2,8 +2,10 @@
 
 namespace App\Livewire;
 
+use ZipArchive;
 use Livewire\Component;
 use App\Models\Expediente;
+use Illuminate\Support\Facades\Request;
 use Illuminate\Support\Facades\Storage;
 
 class MostrarExpediente extends Component
@@ -20,7 +22,6 @@ class MostrarExpediente extends Component
             abort(404);
         }
     }
-
 
 	public function render()
 	{

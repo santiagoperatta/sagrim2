@@ -2,6 +2,7 @@
 
 namespace App\Livewire;
 
+use ZipArchive;
 use Livewire\Component;
 use Illuminate\Support\Str;
 use Illuminate\Http\Request;
@@ -64,6 +65,7 @@ class SubidaArchivos extends Component
 		session()->flash('mensaje', 'Tus archivos se guardaron con éxito, recuerda que una vez terminado el tramite, debes enviarlo');
 		return redirect()->route('dashboard');
 	}
+
 
 
 	public function render()
