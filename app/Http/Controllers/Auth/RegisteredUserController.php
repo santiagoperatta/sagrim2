@@ -43,7 +43,7 @@ class RegisteredUserController extends Controller
 				'unique:'.User::class,
 				function ($attribute, $value, $fail) {
 					if (strpos($value, '@agrimcba.org.ar') === false) {
-						$fail('El correo electrónico debe ser de dominio @agrimcba.com.ar');
+						$fail('El correo electrónico debe ser de dominio @agrimcba.org.ar');
 					}
 				}
 			],
@@ -63,7 +63,6 @@ class RegisteredUserController extends Controller
 
 		Mail::to($user->email)->send(new ConfirmAccount($user));
 
-		// Autenticar al usuario y redirigirlo
 		Auth::login($user);
 	
 		return redirect(RouteServiceProvider::HOME);
