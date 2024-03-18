@@ -48,20 +48,17 @@ class RegisteredUserController extends Controller
 				}
 			],
 			'password' => ['required', 'confirmed', Rules\Password::defaults()],
-			'rol' => ['required', 'numeric', 'between:1,3'],
 		]);
 	
 
-        $user = User::create([
-            'name' => $request->name,
-            'email' => $request->email,
-            'password' => Hash::make($request->password),
-			'rol' => $request->rol
-        ]);
+		$user = User::create([
+			'name' => $request->name,
+			'email' => $request->email,
+			'password' => Hash::make($request->password),
+			'rol' => 2, // Asignar el rol 2 por defecto
+		]);
 
         event(new Registered($user));
-
-		Mail::to($user->email)->send(new ConfirmAccount($user));
 
 		Auth::login($user);
 	

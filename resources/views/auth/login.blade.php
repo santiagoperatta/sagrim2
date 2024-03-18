@@ -52,20 +52,21 @@
         </div>
 
 
-        <div class="flex items-center justify-end mt-4">
+        <div class="flex items-center gap-4 justify-end mt-4">
 
-			<!--<a class="underline text-sm text-gray-600 hover:text-gray-900 rounded-md focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-green-500" href="{{ route('register') }}">
-				{{ __('¿No tienes una cuenta?') }}
-			</a>-->
+			<a class="underline text-sm text-gray-600 hover:text-gray-900 rounded-md focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-green-500" href="{{ route('register') }}">
+				{{ __('Registrarme') }}
+			</a>
 
             @if (Route::has('password.request'))
                 <a class="underline text-sm text-gray-600 hover:text-gray-900 rounded-md focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-green-500" href="{{ route('password.request') }}">
-                    {{ __('Olvidaste tu contraseña?') }}
+                    {{ __('Olvide mi contraseña') }}
                 </a>
             @endif
+			
 
             <x-primary-button class="ms-3">
-                {{ __('Log in') }}
+                {{ __('INICIAR SESION') }}
             </x-primary-button>
         </div>
     </form>

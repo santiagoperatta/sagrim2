@@ -16,7 +16,7 @@
             <x-input-error :messages="$errors->get('email')" class="mt-2" />
         </div>
 
-		<div class="mt-4">
+		<!--<div class="mt-4">
             <x-input-label for="rol" :value="__('Rol de Usuario')" />
 			<select name="rol" id="rol" class="'border-gray-300 focus:border-green-500 focus:ring-green-500 rounded-md shadow-sm'">
 				<option value="">-- Seleccionar un rol --</option>
@@ -24,7 +24,7 @@
 				<option value="2">Profesional</option>
 				<option value="3">Control Previo</option>				
 			</select>
-        </div>
+        </div>-->
 
         <!-- Password -->
         <div class="mt-4">

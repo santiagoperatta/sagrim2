@@ -2,6 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\HomeController;
+use App\Http\Controllers\UserController;
 use App\Http\Controllers\ArchivoController;
 use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\HonorarioController;
@@ -57,6 +58,8 @@ Route::get('/subida-archivos/edit/{expedienteId}', [ArchivoController::class, 'e
 
 Route::post('/descargar-archivos', [ArchivoController::class, 'descargarArchivos'])->name('descargar-archivos');
 
+Route::get('/admin/usuarios', [UserController::class, 'index'])->middleware(['auth', 'verified'])->name('admin.usuarios.index');
+Route::put('/usuarios/{user}/update-role', [UserController::class, 'updateRole'])->name('usuarios.updateRole');
 //Notificaciones
 Route::get('/notificaciones', NotificacionController::class)->middleware(['auth', 'verified'])->name('notificaciones');
 require __DIR__.'/auth.php';
