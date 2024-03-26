@@ -25,6 +25,10 @@
                         {{ __('Pendientes') }}
                     </x-nav-link>
 
+					<x-nav-link :href="route('admin.usuarios.index')" :active="request()->routeIs('admin.usuarios.index')">
+                        {{ __('Usuarios') }}
+                    </x-nav-link>
+
 					@endif
 
 					@if(auth()->user()->rol != 3)
