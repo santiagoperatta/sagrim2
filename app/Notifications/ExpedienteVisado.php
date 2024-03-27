@@ -38,22 +38,8 @@ class ExpedienteVisado extends Notification
      * Get the mail representation of the notification.
      */
     public function toMail(object $notifiable): MailMessage
-    {
-        $url = url('/notificaciones');
-
-
-		
+    {		
 		return (new MailMessage)
-                    ->line('El expediente: ' . $this->id_expediente . 'fue aprobado')
-					->action('Ver Expediente', $url)
-                    ->line('Sagrim');
+                    ->line('El expediente ' . $this->id_expediente . ' fue aprobado.');
     }
-
-	public function toDatabase($notifiable)
-	{
-		return [
-			'id_expediente' => $this->id_expediente,
-			'usuario_id' => $this->usuario_id
-		];
-	}
 }

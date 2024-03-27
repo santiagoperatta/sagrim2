@@ -16,7 +16,7 @@ class ExpedientesEnviados extends Component
         $userId = Auth::id();
 
         // Obtener los expedientes visados del usuario actual o aquellos que él mismo visó (si es administrador)
-        $expedientes = Expediente::where('enviado', 1)
+        $expedientes = Expediente::where('enviado', 1)->where('estado', 0)
             ->where(function ($query) use ($userId) {
                 $query->where('user_id', $userId)
                     ->orWhere('admin_id', $userId);
